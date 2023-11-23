@@ -15,7 +15,7 @@ mongoose.connect(uri)
         console.log('Connected to the DB')
     })
     .catch((error) => {
-        console.errog('Error connecting to the DB', error)
+        console.error('Error connecting to the DB', error)
     })
     
 
