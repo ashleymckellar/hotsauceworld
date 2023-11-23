@@ -22,8 +22,6 @@
         "morgan": "^1.10.0",
         "react-bootstrap": "^2.8.0"
     },
-    "engine": {
-        "node": "16"
-    },
+   
     "proxy": "http://localhost:8100"
 }
