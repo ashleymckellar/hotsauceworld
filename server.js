@@ -6,6 +6,7 @@ const mongoose = require('mongoose')
 const {expressjwt} = require('express-jwt')// Mongoose is an Object Data Modeling (ODM) library for MongoDB in Node.js. It provides a higher-level abstraction for working with MongoDB databases, including defining schemas, models, and convenient methods for CRUD operations.
 uri = process.env.URI
 process.env.SECRET
+const PORT = process.env.PORT || 8100;
 
 
 app.use(express.json());// Used to parse and handle JSON data sent in the request body of an HTTP request. Accessible by request.body
@@ -40,6 +41,6 @@ app.use((err, req, res, next) => {
 
 
 
-app.listen(process.env.PORT || 8100, () => {
-    console.log("The server is running on Port 8100")
+app.listen(PORT, () => {
+    console.log("The server is running on port ${PORT}")
 })
