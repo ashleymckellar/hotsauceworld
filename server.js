@@ -19,7 +19,7 @@ mongoose.connect(uri)
     })
     
 
-//middleware
+//middleware//
 // app.use("/sauces", require("./routes/sauceRouter.js"))
 app.use('/api', expressjwt( { secret: process.env.SECRET, algorithms: ['HS256']}))
 app.use('/auth', require ('./routes/authRouter.js'))
