@@ -7,6 +7,7 @@ const {expressjwt} = require('express-jwt')// Mongoose is an Object Data Modelin
 uri = process.env.URI
 process.env.SECRET
 
+
 app.use(express.json());// Used to parse and handle JSON data sent in the request body of an HTTP request. Accessible by request.body
 app.use(morgan('dev')); // It generates concise log messages to the console, providing information such as the HTTP method, URL, response status code, response time,etc...
 
@@ -39,6 +40,6 @@ app.use((err, req, res, next) => {
 
 
 
-app.listen(8100, () => {
+app.listen(process.env.PORT || 8100, () => {
     console.log("The server is running on Port 8100")
 })
