@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-
 const sauceSchema = new Schema({
     name: {
         type: String,
