@@ -32,7 +32,11 @@ sauceRouter.get("/user", (req, res, next) => {
         });
 });
 
+<<<<<<< HEAD
 // /POST(add one); remember this goes throught the sauces.js and server.js(middleware) so have the correct name in postman --- http://localhost:8100/sauces/
+=======
+// POST(add one); remember this goes throught the sauces.js and server.js(middleware) so have the correct name in postman --- http://localhost:8100/sauces/
+>>>>>>> heroku/main
 
 //THIS ONE WORKS NOW TOO
 sauceRouter.post("/", (req, res, next) => {
