@@ -1,11 +1,10 @@
-import React, { useState, useContext} from 'react'
-import { UserContext } from '../context/UserProvider'
+import React from 'react'
+
 
 export default function AuthForm(props){
     const {
         handleChange,
         handleSubmit,
-        onBlur,
         btnText,
         errMsg,
         isSubmitted,
@@ -17,7 +16,7 @@ export default function AuthForm(props){
 
 
     let minLength = 8
-    let regex = new RegExp(`^.{${minLength},}$`)
+    
 
     function minLengthTest (inputString){
         let minLength = 8
@@ -31,7 +30,7 @@ export default function AuthForm(props){
     return (
         <form onSubmit={handleSubmit} className='mx-auto row g-3'>
             <div className='col-12'>
-                <input
+                <input className='sign-in-form'
                     type="text"
                     value={username}
                     name="username"
@@ -41,7 +40,7 @@ export default function AuthForm(props){
                     <br></br>
             </div>
             <div className='col-12'>
-                <input 
+                <input className='sign-in-form'
                     type="password"
                     value={password}
                     name="password"

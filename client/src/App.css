@@ -1,15 +1,11 @@
 html {
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  
-/* Prevent vertical scrollbars when not needed */
-  background: linear-gradient(146.11deg, #FFDFBA 20.43%, rgba(255, 255, 255, 0) 79.91%), linear-gradient(202.81deg, #FF6636 38.99%, rgba(255, 255, 255, 0) 85.2%), #FFB45C;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+
+    /* Prevent vertical scrollbars when not needed */
+    background: #FF9B50
 }
-
-
-
-
 
 /* body {
   
@@ -17,159 +13,137 @@ html {
   background: linear-gradient(146.11deg, #FFDFBA 20.43%, rgba(255, 255, 255, 0) 79.91%), linear-gradient(202.81deg, #FF6636 38.99%, rgba(255, 255, 255, 0) 85.2%), #FFB45C;
 }  */
 
-
-
-
-
-  
-
-
-
-
 .navbar-color {
-  background: linear-gradient(146.11deg, #FFDFBA 20.43%, rgba(255, 255, 255, 0) 79.91%), linear-gradient(202.81deg, #FF6636 38.99%, rgba(255, 255, 255, 0) 85.2%), #FFB45C;
+    background: #FF9B50
 }
 
-
-
 .pepper {
-  height: 200px;
-  width: 200px;
+    height: 200px;
+    width: 200px;
 }
 
 .submitted-pic {
-  height: 200px;
-  /* width:200px; */
+    height: 200px;
+    /* width:200px; */
 }
 
-
 .details-pic {
-  height: 300px;
+    height: 300px;
 }
 
 li {
-  list-style-type: none
+    list-style-type: none;
 }
 
 .link {
-  text-decoration: none;
-  text-align: center;
-  font-family: "Montserrat";
-  color: black;
-  font-size: 20px;
+    text-decoration: none;
+    text-align: center;
+    font-family: "Montserrat";
+    color: white;
+    font-size: 30px;
 }
 
 .welcome {
-  text-align: center;
-  padding: 10px;
-  background: linear-gradient(146.11deg, #FFDFBA 20.43%, rgba(255, 255, 255, 0) 79.91%), linear-gradient(202.81deg, #FF6636 38.99%, rgba(255, 255, 255, 0) 85.2%), #FFB45C;
+    text-align: center;
+    padding: 10px;
+    background: #FF9B50
 }
- 
-
-
-
-
 
 .cardsize {
-  height: 204px;
+    height: 204px;
 }
-
 
 .comments-div {
-  text-align: left;
+    text-align: left;
 }
 
-
-
 textarea {
-  width: 300px;
-  height: 150px;
+    width: 300px;
+    height: 150px;
 }
 
 .custom-home {
-  margin-left: 300px;
-  margin-right: 300px;
-  margin-top: 50px;
-  text-align: center;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-top: 50px;
+    text-align: center;
 }
 
-@media (min-width: 320px) and (max-width: 768px){
-  .custom-home {
-    margin-left: 30px;
-    margin-right: 30px;
-  }
+@media (min-width: 320px) and (max-width: 768px) {
+    .custom-home {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
 }
 
 @media (max-width: 768px) {
-  .custom-home {
-      margin-left: 30px;
-      margin-right: 30px;
-  }
-  /* .custom-button {
+    .custom-home {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    /* .custom-button {
     width: 100%;
     text-align: center;
   } */
 }
 
 .custom-button {
-  height: 35px; 
-  font-size: 14px; 
-  padding: 15px; 
+    height: 35px;
+    font-size: 14px;
+    padding: 15px;
 }
 
 @font-face {
-  font-family: "Montserrat";
-  src: local("Montserrat"), url("./fonts/static/Montserrat-Light.ttf") format("truetype");
+    font-family: "Montserrat";
+    src: local("Montserrat"),
+        url("./fonts/static/Montserrat-Light.ttf") format("truetype");
 }
-
 
 .comment-container {
-  max-height: 400px; 
-  overflow-y: auto; 
-  border: 1px solid #ccc;
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
     padding: 10px;
     margin-bottom: 10px;
-  border-radius: 10px;
+    border-radius: 10px;
 }
 
-
-
-
-
-  /* .two-red-chili-peppers {
+/* .two-red-chili-peppers {
     max-width: 400px; /* Adjust this value as needed */
-    height: auto;
-/* } */ */
-
-
-
-.home-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; 
-  margin: 0;
-  background: linear-gradient(146.11deg, #FFDFBA 20.43%, rgba(255, 255, 255, 0) 79.91%), linear-gradient(202.81deg, #FF6636 38.99%, rgba(255, 255, 255, 0) 85.2%), #FFB45C;
+height: auto;
+/* } */
+*/ .home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(
+            146.11deg,
+            #ffdfba 20.43%,
+            rgba(255, 255, 255, 0) 79.91%
+        ),
+        linear-gradient(202.81deg, #ff6636 38.99%, rgba(255, 255, 255, 0) 85.2%),
+        #ffb45c;
 }
-
 
 .world {
+    text-align: center;
+    font-family: "Montserrat";
+    color: white;
+    font-size: 50px;
+}
+
+.ready {
   text-align: center;
   font-family: "Montserrat";
-  color: black;
-  font-size: 50px;
+  color: white;
+  font-size: 30px;
 }
 
 
-/* .ready {
-  text-align: center;
-  font-family: "Montserrat";
-  color: black;
-  font-size: 30px;
-} */
-
-
-
-
-
+.sign-in-form {
+  border-radius: 5px;
+  border: 5px;
+}
