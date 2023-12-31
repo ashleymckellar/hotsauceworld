@@ -107,7 +107,7 @@ textarea {
     max-width: 400px; /* Adjust this value as needed */
 height: auto;
 /* } */
-*/ .home-container {
+ .home-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
