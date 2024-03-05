@@ -35,7 +35,6 @@ const sauceSchema = new Schema({
     },
 });
 
-// const initInputs = { name: props.name || "", heatRating: props.heatRating || "", origin: props.origin || "", description: props.description || "", ingredients: props.ingredients || "", imageUrl: props.imageUrl || "" }; //PUT/Update
-//     const [inputs, setInputs] = useState(initInputs);//updates State for initInputs Object/s
+
 
 module.exports = mongoose.model("Sauce", sauceSchema);
