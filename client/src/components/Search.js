@@ -37,7 +37,7 @@ import SauceList from "./SauceList";
    console.log(filteredSauces)
 
 return (
-    <div className="bg-light py-3 text-center">
+    <div className="bg-white py-3 text-center">
         <h3>Just how hot do you want to go?  Find your perfect sauce below! </h3>
         <br></br>
         <p>How many Scoville Heat Units can you handle?</p>

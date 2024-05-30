@@ -102,8 +102,8 @@ async function getUserSauces(){
 async function addComment(hotSaucesId, newComment){
     try {
         const response = await userAxios.post(`api/comment/${hotSaucesId}`, newComment)
-        console.log("comment added", response.data);
-    
+        
+        
         const updatedSauces = hotSauces.map((sauce) => {
             if (sauce._id === hotSaucesId) {
                 sauce.comments.push(response.data)

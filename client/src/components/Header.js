@@ -16,8 +16,8 @@ function Header() {
             <Navbar expand="md" className="navbar-color" variant="light">
                 <Container>
             
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav">
+            <Navbar.Toggle aria-controls="responsive-navbar-nav " />
+                <Navbar.Collapse id="responsive-navbar-nav justify-content-around ">
                     <Row className="mx-auto flex-column flex-md-row">
                         <Col className="text-center">
                             <Link to="/" className="link">
@@ -44,7 +44,7 @@ function Header() {
                     
                    
                         <Col className="text-center">
-                    {token && <button type="submit" class="btn btn-danger" onClick={logout}>Logout</button>}
+                    {token && <button type="submit" class="logout-btn" onClick={logout}>Logout</button>}
                     </Col>
                     </Row>
                    

@@ -15,7 +15,7 @@ export default function Profile(props){
 
 
     return (
-        <div className="bg-light py-3 text-center">
+        <div className="bg-white py-3 text-center">
                 <h1> Welcome @{username}</h1>
                 <br></br>
                 <br></br>
@@ -25,9 +25,9 @@ export default function Profile(props){
                 <div className='py-20'>
                     <h2 className='py-20'>Your Submitted Sauces</h2>
                 </div>
-                <section className="bg-light py-3">
+                <section className="bg-white py-3">
                     <div className="container px-4 px-lg-5 mt-5">
-                        <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                        <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 ">
                     {!userSauceState ? (
                     <ProfileSauceContainer sauces={userSauceState} />
                     ) : (

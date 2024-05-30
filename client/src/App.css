@@ -4,7 +4,7 @@ html {
     padding: 0;
 
     /* Prevent vertical scrollbars when not needed */
-    background: #FF9B50
+    background: #FFFFFF;
 }
 
 /* body {
@@ -14,7 +14,7 @@ html {
 }  */
 
 .navbar-color {
-    background: #FF9B50
+    background: #D32F2F;
 }
 
 .pepper {
@@ -31,9 +31,95 @@ html {
     height: 300px;
 }
 
+.form-flexbox {
+    display: flex;
+    
+}
+
+
+.submit-btn-div {
+    padding-bottom: 10vh;
+}
+
 li {
     list-style-type: none;
 }
+
+.sauce-cards {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* .sauce-container-div {
+    display: flex;
+    justify-content: space-around;
+} */
+
+.sauce-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5vh;
+    padding: 10vh;
+    
+    
+    
+}
+
+
+.sauces-h1 {
+    text-align: center;
+}
+
+.sauce-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1vh;
+    margin-left: 1vh;
+    margin-right: 1vh;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Adjust spacing between buttons if needed */
+    margin-top: 20px; /* Adjust margin to separate buttons from other content */
+    margin-bottom: 20px;
+    
+}
+
+.sauce-details-btn {
+    background-color: #D32F2F;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    color: white;
+    width: 100px;
+}
+
+.show-comments-btn {
+    background-color: #D32F2F;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    color: white;
+    width: 200px;
+}
+
+.add-comments-btn {
+    background-color: #D32F2F;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    color: white;
+    width: 200px;
+}
+
 
 .link {
     text-decoration: none;
@@ -41,12 +127,13 @@ li {
     font-family: "Montserrat";
     color: white;
     font-size: 30px;
+    font-weight: bold;
 }
 
 .welcome {
     text-align: center;
     padding: 10px;
-    background: #FF9B50
+    background: #FFFFFF;
 }
 
 .cardsize {
@@ -54,12 +141,51 @@ li {
 }
 
 .comments-div {
-    text-align: left;
+   
+    width: 500px;
+
+    
+}
+
+.card-comments-parent {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 3vh;
+}
+
+.card-comments-div {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: .5vh;
+    margin-bottom: 2vh;
+    padding-right: 3vh;
+    background-color: ;
+}
+
+.comment-bubble {
+    display: flex;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: 2vh;
+    padding: 1vh;
+    justify-content: center;
+    background: #F45D31;
+    color: white;
 }
 
 textarea {
     width: 300px;
     height: 150px;
+}
+
+.logout-btn {
+    background-color: #FBC02D;
+    border: none;
+    border-radius: 5px;
+    font-size: 25px;
+    color: white;
+    
 }
 
 .custom-home {
@@ -99,13 +225,24 @@ textarea {
         url("./fonts/static/Montserrat-Light.ttf") format("truetype");
 }
 
+
+.details-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
 .comment-container {
-    max-height: 400px;
-    overflow-y: auto;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 10px;
+   display: flex;
+   border: 1px solid gray;
+   border-radius: 5px;
+   justify-content: center;
+   align-items: center;
+   padding-top: 2vh;
+   margin: 2vh;
+   width: 600px;
 }
 
 /* .two-red-chili-peppers {
@@ -145,5 +282,5 @@ height: auto;
 
 .sign-in-form {
   border-radius: 5px;
-  border: 5px;
+  border: 1px solid gray;  
 }

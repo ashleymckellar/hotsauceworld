@@ -24,6 +24,5 @@
     },
     "engine": {
         "node": "16"
-    },
-    "proxy": "http://localhost:8100"
+    }
 }

@@ -27,7 +27,7 @@ useEffect(()=> {
     
     <div>
       <Router>
-      <div className="bg-light">
+      <div className="bg-white">
       {token && <Header />} 
       
     
