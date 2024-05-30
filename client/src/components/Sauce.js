@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom'
 
 export default function Sauce(props) {
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const { name, origin, _id } = props // Imported from Form.js
     const [editToggle, setEditToggle] = useState(false)
