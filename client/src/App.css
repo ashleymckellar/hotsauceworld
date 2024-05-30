@@ -268,14 +268,14 @@ height: auto;
 .world {
     text-align: center;
     font-family: "Montserrat";
-    color: white;
+    color: black;
     font-size: 50px;
 }
 
 .ready {
   text-align: center;
   font-family: "Montserrat";
-  color: white;
+  color: black;
   font-size: 30px;
 }
 
