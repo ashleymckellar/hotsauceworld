@@ -23,6 +23,7 @@ const [userState, setUserState] = useState(initState)
 const [hotSauces, setHotSauces] = useState([]);
 const [userSaucesState, setUserSaucesState] = useState([])
 const [isSubmitted, setIsSubmitted] =useState(false)
+const [hotSauceById, setHotSauceById] = useState({})
 
 function signup(credentials){
     axios.post("auth/signup", credentials)
@@ -86,6 +87,7 @@ async function getUserSauces(){
         const response = await userAxios.get("/api/sauce/user")
         const userSaucesData = response.data
         console.log("user sauces data", userSaucesData)
+
         setUserState(prevState => ({
             ...prevState,
             sauces: userSaucesData
@@ -124,6 +126,12 @@ function getSauce() {
         .catch(error => console.log(error));
   }
 
+  function getSauceById(hotSaucesId) {
+    userAxios.get(`api/sauce/${hotSaucesId}`)
+        .then(response => setHotSauceById(response.data))
+        .catch(error => console.log(error))
+  }
+
 console.log(hotSauces)
 
 function addSauce(newSauce) {
@@ -152,7 +160,11 @@ return (
             setUserSaucesState,
             addComment,
             isSubmitted,
-            setIsSubmitted
+            setIsSubmitted,
+            getSauceById,
+            hotSauceById,
+            setHotSauceById
+            
         }}>
             {props.children}
      </UserContext.Provider>

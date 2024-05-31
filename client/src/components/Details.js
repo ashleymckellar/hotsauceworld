@@ -9,7 +9,7 @@ import pepper from "../assets/chilipepper.jpg"
 function Details(props){
     // const { name, origin, heatRating, description, ingredients, imageUrl, comments, _id } = props
     const { sauceId } = useParams();
-    const { addComment, hotSauces } = useContext(UserContext);
+    const { addComment, hotSauces, getSauceById, hotSauceById, setHotSauceById } = useContext(UserContext);
     const [foundSauce, setFoundSauce] = useState({});
     const [formData, setFormData] = useState({
         comment: "",

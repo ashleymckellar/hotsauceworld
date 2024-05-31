@@ -12,6 +12,7 @@ sauceRouter.get("/", (request, response, next) => {
     Sauce.find()
         .exec()
         .then((sauce) => {
+            console.log(response.data)
             return response.status(200).send(sauce);
         })
         .catch((error) => {
@@ -20,9 +21,22 @@ sauceRouter.get("/", (request, response, next) => {
         });
 });
 
-//GET by user ID - THIS NOW WORKS AS EXPECTED
+//this one works, thank god
+// sauceRouter.get('/:sauceId', (req, res, next) => {
+//     Sauce.find({_id: req.params.sauceId })
+//     .then((sauce) => {
+//         res.status(200).send(sauce);
+//     })
+//     .catch((err) => {
+//         res.status(500);
+//         next(err);
+//     });
+// });
+
+
+///how did i break this route?
 sauceRouter.get("/user", (req, res, next) => {
-    Sauce.find({ user: req.auth._id })
+    Sauce.find({ userId: req.auth._id })
         .then((sauces) => {
             res.status(200).send(sauces);
         })
@@ -57,7 +71,7 @@ sauceRouter.delete("/:sauceId", (req, res, next) => {
             if (!deletedSauce) {
                 return res.status(404).send("Sauce not found");
             }
-            return res.status(200).send("Sauce found");
+            return res.status(200).send("Sauce deleted");
         })
         .catch((error) => {
             res.status(500);
