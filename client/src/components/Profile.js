@@ -5,13 +5,13 @@ import ProfileSauceContainer from './ProfileSauceContainer'
 
 export default function Profile(props){
     const { user: { username }, getUserSauces, userSauceState, addSauce } = useContext(UserContext)
-    // const {comment} = props
+    const {comment} = props
 
 
     useEffect(() => {
         getUserSauces(); 
        
-    }, [getUserSauces])
+    }, [])
 
 
     return (
