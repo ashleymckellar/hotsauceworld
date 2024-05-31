@@ -25,7 +25,7 @@ function SauceList(props) {
 
     const handleClick = () => {
         
-        setShowForm(true)
+        setShowForm(!showForm)
     }
 
     const handleCommentClick = (e) => {
@@ -49,7 +49,7 @@ function SauceList(props) {
         
         console.log("comment submitted!")
         setFormData({ comment: ""})
-        setShowComments(true)
+        setShowForm(false)
         
     }
 
@@ -58,10 +58,10 @@ function SauceList(props) {
     // console.log(hotSauces)
 
     return (
-        <div className="">
-            <div className="card col mb-5">
-                <div className="h-200">
-                    <div className="card-body p-3">
+        <div>
+            <div>
+                
+                    <div className="p-3">
                         <div className="sauce-card">
                             <h4>{name}</h4>
                             <br></br>
@@ -108,7 +108,7 @@ function SauceList(props) {
                                 <div className="card-comments-div">
                                     
                                     <div className=" .bg-body-secondary">
-                                        <div>
+                                        
                                         <ul>
                                             {comments &&
                                             Array.isArray(comments) ? (
@@ -122,11 +122,12 @@ function SauceList(props) {
                                                 <li>No comments found.</li>
                                             )}
                                         </ul>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                                 </div>
                             )}
+                                        
 
                             <button
                                 type="submit"
@@ -139,30 +140,32 @@ function SauceList(props) {
                             <br></br>
                             {showForm && (
                                 <form>
-                                    <input
+                                    <textarea
                                         type="text"
                                         name="comment"
+                                        className="comment-form"
                                         onChange={handleChange}
                                         value={formData.comment}
                                     />
-                                    <br></br>
-                                    <br></br>
+                                    
                                     <button
                                         type="submit"
-                                        class="btn btn-danger"
+                                        class="comment-submit"
                                         onClick={handleSubmit}
                                         disabled={!formData.comment}
                                     >
                                         Submit
                                     </button>
                                 </form>
-                            )}
+                            ) }
                         </div>
-                    </div>
-                </div>
+                   
+                
             </div>
         </div>
+        </div>
     );
-};
+}
+
 
 export default SauceList;

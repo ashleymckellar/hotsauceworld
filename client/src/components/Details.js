@@ -1,21 +1,31 @@
-
-
-
 import React, { useEffect, useState, useContext } from "react"
 import { useParams } from "react-router-dom"
 import { UserContext } from "../context/UserProvider"
 import pepper from "../assets/chilipepper.jpg"
+import axios from 'axios'
+
+const userAxios = axios.create()
+
+userAxios.interceptors.request.use(config => {
+    const token = localStorage.getItem("token")
+    config.headers.Authorization = `Bearer ${token}`
+    return config
+})
 
 function Details(props){
     // const { name, origin, heatRating, description, ingredients, imageUrl, comments, _id } = props
     const { sauceId } = useParams();
-    const { addComment, hotSauces, getSauceById, hotSauceById, setHotSauceById } = useContext(UserContext);
+    const { addComment, hotSauces } = useContext(UserContext);
     const [foundSauce, setFoundSauce] = useState({});
     const [formData, setFormData] = useState({
         comment: "",
     });
     // const hotSaucesId = foundSauce._id
     const [showForm, setShowForm] = useState(false);
+    const [hotSauceById, setHotSauceById] = useState({})
+
+    console.log(sauceId)
+    console.log(hotSauceById)
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -50,22 +60,37 @@ function Details(props){
         }));
     };
 
-    useEffect(() => {
-        const sauce = hotSauces.find((salsa) => salsa._id === sauceId);
-        setFoundSauce(sauce);
-    }, [hotSauces, setFoundSauce]);
+    // useEffect(() => {
+    //     const sauce = hotSauces.find((salsa) => salsa._id === sauceId);
+    //     setFoundSauce(sauce);
+    // }, [hotSauces, setFoundSauce]);
 
-    console.log(foundSauce);
+    async function getSauceById(sauceId) {
+        try {
+            const response = await userAxios.get(`/api/item/${sauceId}`)
+            const itemData = response.data
+            console.log('item data', itemData)
+            setHotSauceById(itemData)
+        } catch (error) {
+            console.error ('error fetching item', error)
+        }
+    }
+
+     useEffect(() => {
+        getSauceById(sauceId)
+    }, [sauceId])
+
+    // console.log(foundSauce);
     return (
         <div className="details-div">
             <div className="bg-white py-3 text-center">
-                <h3>{!!foundSauce && foundSauce.name}</h3>
+                <h3>{!!hotSauceById && hotSauceById.name}</h3>
                 
-                    {!!foundSauce &&
-                    foundSauce.imageUrl &&
-                    foundSauce.imageUrl !== null ? (
+                    {!!hotSauceById  &&
+                    hotSauceById .imageUrl &&
+                    hotSauceById .imageUrl !== null ? (
                         <img
-                            src={foundSauce.imageUrl}
+                            src={hotSauceById .imageUrl}
                             className="details-pic"
                         />
                     ) : (
@@ -73,19 +98,19 @@ function Details(props){
                     )}
                 
                 
-                <h5>Origin: {!!foundSauce && foundSauce.origin}</h5>
+                <h5>Origin: {!!hotSauceById  && hotSauceById .origin}</h5>
                 <h5>
                     Heat Rating (Scoville Units):
-                    {!!foundSauce && foundSauce.heatRating}
+                    {!!hotSauceById  && hotSauceById.heatRating}
                 </h5>
-                <h5>Description:{!!foundSauce && foundSauce.description}</h5>
-                <h5>Ingredients:{!!foundSauce && foundSauce.ingredients}</h5>
+                <h5>Description:{!!hotSauceById  && hotSauceById.description}</h5>
+                <h5>Ingredients:{!!hotSauceById && hotSauceById.ingredients}</h5>
 
                 <h3>Comments</h3>
                 <div className="comment-container">
                     <ul>
-                        {foundSauce && Array.isArray(foundSauce.comments) ? (
-                            foundSauce.comments.map((comment) => (
+                        {hotSauceById && Array.isArray(hotSauceById.comments) ? (
+                            hotSauceById.comments.map((comment) => (
                                 <li
                                     className="comment-bubble"
                                     key={comment._id}
@@ -104,6 +129,10 @@ function Details(props){
 };
 
 export default Details;
+
+
+
+
 
 
 

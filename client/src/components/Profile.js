@@ -13,6 +13,8 @@ export default function Profile(props){
        
     }, [])
 
+    console.log(userSauceState)
+
 
     return (
         <div className="bg-white py-3 text-center">
@@ -27,7 +29,7 @@ export default function Profile(props){
                 </div>
                 <section className="bg-white py-3">
                     <div className="container px-4 px-lg-5 mt-5">
-                        <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                        <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 ">
                     {!userSauceState ? (
                     <ProfileSauceContainer sauces={userSauceState} />
                     ) : (

@@ -37,32 +37,52 @@ import SauceList from "./SauceList";
    console.log(filteredSauces)
 
 return (
-    <div className="bg-white py-3 text-center">
-        <h3>Just how hot do you want to go?  Find your perfect sauce below! </h3>
-        <br></br>
-        <p>How many Scoville Heat Units can you handle?</p>
-        <label>0 - 5000000</label>
-        <br></br>
-        <form onSubmit={handleSubmit}>
-            <input min ={0} max={5000000} type="range" name="heat" style={{ width: "300px"}} value={inputData.heatRating} onChange={handleInputChange}/>{inputData.heatRating}
-            <p>{inputData.heat}</p>
-            <button type="submit" class="btn btn-danger" disabled={isDisabled} onClick={handleSubmit}>Submit</button>
-        </form>
-       
-   
-        {isSubmitted && filteredSauces && filteredSauces.length === 0 && (
-            <h5> No sauces found.  Please refine your search criteria. </h5>
-        )}
+    <div className="container">
+        <div className="bg-white py-3 text-center">
+            <h3>
+                Just how hot do you want to go? Find your perfect sauce below!{" "}
+            </h3>
+            <br></br>
+            <p>How many Scoville Heat Units can you handle?</p>
+            <label>0 - 5000000</label>
+            <br></br>
+            <form onSubmit={handleSubmit}>
+                <input
+                    min={0}
+                    max={5000000}
+                    type="range"
+                    name="heat"
+                    style={{ width: "300px" }}
+                    value={inputData.heatRating}
+                    onChange={handleInputChange}
+                />
+                {inputData.heatRating}
+                <p>{inputData.heat}</p>
+                <button
+                    type="submit"
+                    class="btn btn-danger"
+                    disabled={isDisabled}
+                    onClick={handleSubmit}
+                >
+                    Submit
+                </button>
+            </form>
 
-        {isSubmitted && filteredSauces && filteredSauces.length > 0 && (
-            <div> {filteredSauces.map((sauce) => (
-                <SauceList {...sauce} key={sauce._id} />
+            {isSubmitted && filteredSauces && filteredSauces.length === 0 && (
+                <h5> No sauces found. Please refine your search criteria. </h5>
+            )}
+
+            {isSubmitted && filteredSauces && filteredSauces.length > 0 && (
+                <div className="row">
+                {filteredSauces.map((sauce) => (
+                    <div className="col-md-4 mb-4" key={sauce._id}>
+                        <SauceList {...sauce} />
+                    </div>
                 ))}
-    
-            </div> 
-    
-        )}
+            </div>
+            )}
+        </div>
     </div>
-    )
+);
 }
 export default Search
