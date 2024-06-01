@@ -133,7 +133,7 @@ function Form(props) {
                         onBlur={onRequiredBlur}
                         placeholder="Origin" />
                 </div>
-                <div class="col-12">
+                <div class="col-md-4">
                     <input
                         type="textarea"
                         class="form-control"
@@ -143,7 +143,7 @@ function Form(props) {
                         onChange={handleChange}
                         placeholder="Description" />
                 </div>
-                <div class="col-12">
+                <div class="col-md-4">
                     <input
                         type="text"
                         class="form-control"
@@ -152,7 +152,7 @@ function Form(props) {
                         onChange={handleChange}
                         placeholder="Ingredients" />
                 </div>
-                <div class="text-center">
+                <div class="col-md-4">
                     <input
                         type="text"
                         class="form-control"

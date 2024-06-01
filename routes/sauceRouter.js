@@ -34,9 +34,10 @@ sauceRouter.get("/", (request, response, next) => {
 // });
 
 
-///how did i break this route?
+///fixed this route
 sauceRouter.get("/user", (req, res, next) => {
-    Sauce.find({ user: req.auth._id })
+    
+    Sauce.find({ user: req.auth._id})
         .then((sauces) => {
             res.status(200).send(sauces);
         })

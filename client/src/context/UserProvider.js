@@ -24,6 +24,7 @@ const [hotSauces, setHotSauces] = useState([]);
 const [userSaucesState, setUserSaucesState] = useState([])
 const [isSubmitted, setIsSubmitted] =useState(false)
 const [hotSauceById, setHotSauceById] = useState({})
+const [loading, setLoading] = useState(true);
 
 function signup(credentials){
     axios.post("auth/signup", credentials)
@@ -86,6 +87,7 @@ async function getUserSauces(){
     try {
         const response = await userAxios.get("/api/sauce/user")
         const userSaucesData = response.data
+
         console.log("user sauces data", userSaucesData)
 
         setUserState(prevState => ({
@@ -96,6 +98,7 @@ async function getUserSauces(){
         setUserSaucesState(userSaucesArray)
     } catch (error) {
         console.error("error fetching user sauces", error)
+        setLoading(false);
     }
 }
 
@@ -119,18 +122,26 @@ async function addComment(hotSaucesId, newComment){
     }
 }
 
-
+//gets all sauces
 function getSauce() {
     userAxios.get("/api/sauce", { params: { timestamp: Date.now() } })
         .then(response => setHotSauces(response.data))
         .catch(error => console.log(error));
   }
 
-  function getSauceById(hotSaucesId) {
-    userAxios.get(`api/sauce/${hotSaucesId}`)
-        .then(response => setHotSauceById(response.data))
-        .catch(error => console.log(error))
-  }
+  //gets a single sauce based on its ID
+
+async function getSauceById(_id) {
+    try {
+        const response = await userAxios.get(`api/item/${_id}`)
+        const itemData = response.data
+        console.log('item data', itemData)
+        setHotSauceById(itemData)
+    } catch (error) {
+        console.error ('error fetching item', error)
+    }
+}
+
 
 console.log(hotSauces)
 
@@ -142,6 +153,8 @@ function addSauce(newSauce) {
       })
       .catch(error => console.log(error))
 }
+
+
 
 return (
     <UserContext.Provider
@@ -163,7 +176,8 @@ return (
             setIsSubmitted,
             getSauceById,
             hotSauceById,
-            setHotSauceById
+            setHotSauceById,
+            loading
             
         }}>
             {props.children}

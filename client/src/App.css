@@ -13,9 +13,9 @@ html {
   background: linear-gradient(146.11deg, #FFDFBA 20.43%, rgba(255, 255, 255, 0) 79.91%), linear-gradient(202.81deg, #FF6636 38.99%, rgba(255, 255, 255, 0) 85.2%), #FFB45C;
 }  */
 
-.navbar-color {
+/* .navbar-color {
     background: #D32F2F;
-}
+} */
 
 .pepper {
     height: 200px;
@@ -33,6 +33,7 @@ html {
 
 .form-flexbox {
     display: flex;
+    justify-content: center;
     
 }
 
@@ -45,13 +46,13 @@ li {
     list-style-type: none;
 }
 
-.sauce-cards {
+/* .sauce-cards {
     display: flex;
     justify-content: center;
     text-align: center;
     align-items: center;
     flex-direction: column;
-}
+} */
 
 /* .sauce-container-div {
     display: flex;
@@ -81,6 +82,17 @@ li {
     margin-top: 1vh;
     margin-left: 1vh;
     margin-right: 1vh;
+    max-width: 300px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 2vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+   justify-content: center;
+    
 }
 
 .button-container {
@@ -120,6 +132,30 @@ li {
     width: 200px;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.comment-submit {
+    margin-top: 10px;
+    align-self: center; 
+    background-color: #D32F2F;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    color: white;
+    width: 200px;
+
+}
+
+.sauce-search-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 .link {
     text-decoration: none;
@@ -145,6 +181,12 @@ li {
     width: 500px;
 
     
+}
+
+
+.custom-card {
+    border: 1px solid gray;
+    border-radius: 5px;
 }
 
 .card-comments-parent {
@@ -188,12 +230,12 @@ textarea {
     
 }
 
-.custom-home {
+/* .custom-home {
     margin-left: 300px;
     margin-right: 300px;
     margin-top: 50px;
     text-align: center;
-}
+} */
 
 @media (min-width: 320px) and (max-width: 768px) {
     .custom-home {

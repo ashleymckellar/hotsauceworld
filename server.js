@@ -25,6 +25,7 @@ app.use('/api', expressjwt( { secret: process.env.SECRET, algorithms: ['HS256']}
 app.use('/auth', require ('./routes/authRouter.js'))
 app.use('/api/sauce', require('./routes/sauceRouter.js'))
 app.use('/api/comment', require('./routes/commentRouter.js'))
+app.use('/api/item', require('./routes/itemRouter.js'))
 
 
 
