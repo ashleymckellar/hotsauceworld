@@ -29,7 +29,8 @@ export default function Profile(props){
                 </div>
                 <section className="bg-white py-3">
                     <div>
-                        <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 ">
+                        <div className="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-4 ">
+                        
                     {!userSauceState ? (
                     <ProfileSauceContainer sauces={userSauceState} />
                     ) : (

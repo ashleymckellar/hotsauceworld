@@ -135,7 +135,7 @@ function Form(props) {
                 </div>
                 <div class="col-md-4">
                     <input
-                        type="textarea"
+                        type="text"
                         class="form-control"
                         
                         name="description"

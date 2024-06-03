@@ -59,9 +59,9 @@ function SauceList(props) {
 
     return (
         <div>
-            <div>
+            
                 
-                    <div className="p-3">
+            <div className="row gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-3 py-3">
                         <div className="sauce-card">
                             <h4>{name}</h4>
                             <br></br>
@@ -140,7 +140,7 @@ function SauceList(props) {
                             <br></br>
                             {showForm && (
                                 <form>
-                                    <textarea
+                                    <input
                                         type="text"
                                         name="comment"
                                         className="comment-form"
@@ -163,7 +163,7 @@ function SauceList(props) {
                 
             </div>
         </div>
-        </div>
+        
     );
 }
 
