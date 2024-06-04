@@ -1,4 +1,4 @@
-///bug: page has to be refreshed for new comment to appear
+
 
 
 
@@ -103,15 +103,16 @@ function SauceList(props) {
                                 
                             </div>
                             {showComments && (
-                                <div className="card-comments-parent">
+                                <div>
                                     <h3>Comments</h3>
-                                <div className="card-comments-div">
+                                <div>
                                     
                                     <div className=" .bg-body-secondary">
                                         
                                         <ul>
                                             {comments &&
                                             Array.isArray(comments) ? (
+                                                
                                                 comments.map((comment) => (
                                                     <li key={comment._id} className="comment-bubble">
                                                         <p>{comment.comment}</p>

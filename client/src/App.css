@@ -7,6 +7,7 @@ html {
     background: #FFFFFF;
 }
 
+
 /* body {
   
   
@@ -175,7 +176,23 @@ form {
 .welcome {
     text-align: center;
     padding: 10px;
-    background: #FFFFFF;
+   
+    position: relative;
+    height: 100%;
+}
+
+.overlay {
+    
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better text readability */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
 }
 
 .cardsize {
@@ -222,10 +239,7 @@ form {
     color: white;
 }
 
-textarea {
-    width: 300px;
-    height: 150px;
-}
+
 
 .logout-btn {
     background-color: #FBC02D;
@@ -293,10 +307,12 @@ textarea {
    width: 600px;
 }
 
-/* .two-red-chili-peppers {
-    max-width: 400px; /* Adjust this value as needed */
-height: auto;
-/* } */
+/* .background-image {
+    position: relative;
+    height: 100%;
+    background: url("../assets/chili-peppers.jpeg") no-repeat center center/cover;
+} */
+
 */ .home-container {
     display: flex;
     flex-direction: column;
@@ -316,14 +332,15 @@ height: auto;
 .world {
     text-align: center;
     font-family: "Montserrat";
-    color: black;
+    color: #D32F2F;
     font-size: 50px;
 }
 
 .ready {
   text-align: center;
   font-family: "Montserrat";
-  color: black;
+  font-weight: bold;
+  color: #D32F2F;
   font-size: 30px;
 }
 
