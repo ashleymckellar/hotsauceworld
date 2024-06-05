@@ -1,4 +1,4 @@
-///bug: page has to be refreshed for new comment to appear
+
 
 
 
@@ -25,7 +25,7 @@ function SauceList(props) {
 
     const handleClick = () => {
         
-        setShowForm(true)
+        setShowForm(!showForm)
     }
 
     const handleCommentClick = (e) => {
@@ -49,7 +49,7 @@ function SauceList(props) {
         
         console.log("comment submitted!")
         setFormData({ comment: ""})
-        setShowComments(true)
+        setShowForm(false)
         
     }
 
@@ -58,77 +58,115 @@ function SauceList(props) {
     // console.log(hotSauces)
 
     return (
-        <div className="col-sm-3 col-lg-3 img-fluid rounded mx-auto d-block">
-            <div className="card col mb-5">
-                <div className="h-350">
-                    <div className="card-body p-4">
-                        <div className="text-center">
-
-                            <h2>{name}</h2>
-                            <h4>birth place: {origin}</h4>
+        <div>
+            
+                
+            <div className="row gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-3 py-3">
+                        <div className="sauce-card">
+                            <h4>{name}</h4>
+                            <br></br>
+                            <h5>Origin: {origin}</h5>
+                            <br></br>
                             <p>Scoville rating:{heatRating}</p>
                             <p>Description:{description}</p>
                             <p>Ingredients: {ingredients}</p>
                             {imageUrl ? (
-                                <img src={imageUrl} className="submitted-pic card-img-top cardsize" />
+                                <img
+                                    src={imageUrl}
+                                    className="submitted-pic card-img-top cardsize"
+                                />
                             ) : (
-                                <img src={pepper} className="pepper submitted-pic card-img-top cardsize"/>
-                            )
-                }
-                            <br></br>
-                            <br></br>
-                            <button type="submit" class="btn btn-danger" onClick={handleDetailsClick}>Details</button>
-                            <br></br>
-                            <br></br>
-                            <button type="submit" class="btn btn-danger" onClick={handleCommentClick}>
-                            {showComments ? "Hide Comments" : "Show Comments"}
+                                <img
+                                    src={pepper}
+                                    className="pepper submitted-pic card-img-top cardsize"
+                                />
+                            )}
+
+                            <div className="button-container">
+                                <button
+                                    type="submit"
+                                    className="sauce-details-btn"
+                                    onClick={handleDetailsClick}
+                                >
+                                    Details
+                                </button>
+
+                                <button
+                                    type="submit"
+                                    className="show-comments-btn"
+                                    onClick={handleCommentClick}
+                                >
+                                    {showComments
+                                        ? "Hide Comments"
+                                        : "Show Comments"}
+                                </button>
+                                
+                            </div>
+                            {showComments && (
+                                <div>
+                                    <h3>Comments</h3>
+                                <div>
+                                    
+                                    <div className=" .bg-body-secondary">
+                                        
+                                        <ul>
+                                            {comments &&
+                                            Array.isArray(comments) ? (
+                                                
+                                                comments.map((comment) => (
+                                                    <li key={comment._id} className="comment-bubble">
+                                                        <p>{comment.comment}</p>
+                                                        
+                                                    </li>
+                                                ))
+                                            ) : (
+                                                <li>No comments found.</li>
+                                            )}
+                                        </ul>
+                                        
+                                    </div>
+                                </div>
+                                </div>
+                            )}
+                                        
+
+                            <button
+                                type="submit"
+                                className="add-comments-btn"
+                                onClick={handleClick}
+                            >
+                                Add Comment
                             </button>
                             <br></br>
                             <br></br>
-                            {showComments ? (
-                                <div>
-                            <h3>Comments</h3> 
-                             <div className=" .bg-body-secondary">
-                                <ul>
-                                    {comments && Array.isArray(comments) ? (
-                                        comments.map((comment) => (
-                                        <li key={comment._id}>
-                                            <p>{comment.comment}</p>
-                                            <br></br>
-                                            <br></br>
-                                        </li>
-                                    ))
-                                ) : (
-                                    <li>No comments found.</li>
-                                )}
-                                </ul>
-                            </div> 
-                            </div>
-                            ) : null }
+                            {showForm && (
+                                <form>
+                                    <input
+                                        type="text"
+                                        name="comment"
+                                        className="comment-form"
+                                        onChange={handleChange}
+                                        value={formData.comment}
+                                    />
+                                    
+                                    <button
+                                        type="submit"
+                                        class="comment-submit"
+                                        onClick={handleSubmit}
+                                        disabled={!formData.comment}
+                                    >
+                                        Submit
+                                    </button>
+                                </form>
+                            ) }
+                        </div>
                    
-             <button type="submit" class="btn btn-danger" onClick={handleClick}>Add Comment</button>
-            <br></br>
-            <br></br>
-            {showForm? (
-                <form>
-                    <input
-                    type="text"
-                        name="comment"
-                        onChange={handleChange}
-                        value={formData.comment}
-                    />
-                        <br></br>
-                        <br></br>
-                    <button type="submit" class="btn btn-danger" onClick={handleSubmit} disabled={!formData.comment}>Submit</button>
-                </form>
-            ) : null}
-            
-                     </div>
-                </div>
+                
             </div>
         </div>
-    </div>               
-    )
-};
+        
+    );
+}
+
 
 export default SauceList;

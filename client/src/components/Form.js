@@ -100,7 +100,7 @@ function Form(props) {
     }
 
     return (
-        <div>
+        <div className="form-flexbox">
 
             <form class="mx-auto row g-3" onSubmit={handleSubmit}>
                 <div class="col-md-4">
@@ -133,9 +133,9 @@ function Form(props) {
                         onBlur={onRequiredBlur}
                         placeholder="Origin" />
                 </div>
-                <div class="col-12">
+                <div class="col-md-4">
                     <input
-                        type="textarea"
+                        type="text"
                         class="form-control"
                         
                         name="description"
@@ -143,7 +143,7 @@ function Form(props) {
                         onChange={handleChange}
                         placeholder="Description" />
                 </div>
-                <div class="col-12">
+                <div class="col-md-4">
                     <input
                         type="text"
                         class="form-control"
@@ -152,7 +152,7 @@ function Form(props) {
                         onChange={handleChange}
                         placeholder="Ingredients" />
                 </div>
-                <div class="text-center">
+                <div class="col-md-4">
                     <input
                         type="text"
                         class="form-control"
@@ -165,7 +165,7 @@ function Form(props) {
 
                 {validationError && <p style={{ color: 'red' }}>{validationError}</p>} 
                 {isError && <p style={{ color: 'red' }}>{requiredFieldError}</p>}
-                <div class="text-center my-10">
+                <div className="submit-btn-div">
                     <button type="submit" class="btn btn-danger" onClick={handleSubmit} disabled={isDisabled}>Submit</button>
                 <br></br>
                 </div>

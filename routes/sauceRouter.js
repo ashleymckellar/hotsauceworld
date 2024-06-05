@@ -3,7 +3,7 @@ const sauceRouter = express.Router();
 
 const Sauce = require("../models/Sauce.js"); //
 
-///app.use('/api/sauce', require('./routes/sauceRouter.js'))
+//app.use('/api/sauce', require('./routes/sauceRouter.js'))
 
 //GET all sauces, regardless of user
 
@@ -12,6 +12,7 @@ sauceRouter.get("/", (request, response, next) => {
     Sauce.find()
         .exec()
         .then((sauce) => {
+            console.log(response.data)
             return response.status(200).send(sauce);
         })
         .catch((error) => {
@@ -20,9 +21,23 @@ sauceRouter.get("/", (request, response, next) => {
         });
 });
 
-//GET by user ID - THIS NOW WORKS AS EXPECTED
+//this one works, thank god
+// sauceRouter.get('/:sauceId', (req, res, next) => {
+//     Sauce.find({_id: req.params.sauceId })
+//     .then((sauce) => {
+//         res.status(200).send(sauce);
+//     })
+//     .catch((err) => {
+//         res.status(500);
+//         next(err);
+//     });
+// });
+
+
+///fixed this route
 sauceRouter.get("/user", (req, res, next) => {
-    Sauce.find({ user: req.auth._id })
+    
+    Sauce.find({ user: req.auth._id})
         .then((sauces) => {
             res.status(200).send(sauces);
         })
@@ -32,7 +47,7 @@ sauceRouter.get("/user", (req, res, next) => {
         });
 });
 
-// /POST(add one); remember this goes throught the sauces.js and server.js(middleware) so have the correct name in postman --- http://localhost:8100/sauces/
+// POST(add one); remember this goes throught the sauces.js and server.js(middleware) so have the correct name in postman --- http://localhost:8100/sauces/
 
 //THIS ONE WORKS NOW TOO
 sauceRouter.post("/", (req, res, next) => {
@@ -57,7 +72,7 @@ sauceRouter.delete("/:sauceId", (req, res, next) => {
             if (!deletedSauce) {
                 return res.status(404).send("Sauce not found");
             }
-            return res.status(200).send("Sauce found");
+            return res.status(200).send("Sauce deleted");
         })
         .catch((error) => {
             res.status(500);

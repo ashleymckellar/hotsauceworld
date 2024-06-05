@@ -12,19 +12,18 @@ function SauceListContainer() {
     }, []);
 
     return (
-        <>
-            <h1>Sauces</h1>
-            <section className="bg-light py-3">
-                    <div className="container px-4 px-lg-5 mt-5">
-                        <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            {hotSauces.map(sauce => (
-                <SauceList {...sauce} key={sauce._id} />
-                      
-            ))}
-              </div>
+        <div className="sauce-box">
+            <h1 className="sauces-h1">Sauces</h1>
+            <div className="bg-white py-3">
+                <div>
+                    <div className="row gx-4 gx-lg-5 mx-5 row-cols-1 row-cols-md-2 row-cols-xl-4">
+                        {hotSauces.map((sauce) => (
+                            <SauceList {...sauce} key={sauce._id} />
+                        ))}
                     </div>
-                    </section>
-        </>
+                </div>
+            </div>
+        </div>
     );
 };
 

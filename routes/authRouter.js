@@ -1,4 +1,5 @@
 const express = require('express')
+const { auth, requiresAuth } = require('express-openid-connect');
 const authRouter = express.Router()
 const User = require('../models/User.js')
 const jwt = require('jsonwebtoken')
