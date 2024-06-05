@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 const { expressjwt } = require("express-jwt"); 
 process.env.SECRET;
 const PORT = process.env.PORT || 8100;
+const uri = process.env.URI
 
 app.use(express.json()); 
 app.use(morgan("dev")); 
@@ -20,29 +21,29 @@ mongoose.connect(uri)
 
 
 
-app.use(
-    session({
-        secret: process.env.SECRET,
-        resave: true,
-        saveUninitialized: true,
-    })
-);
+// app.use(
+//     session({
+//         secret: process.env.SECRET,
+//         resave: true,
+//         saveUninitialized: true,
+//     })
+// );
 
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
-app.get(
-    "/auth/google",
-    passport.authenticate("google", { scope: ["profile", "email"] })
-);
-app.get(
-    "/auth/google/callback",
-    passport.authenticate("google", { failureRedirect: "/" }),
-    (req, res) => {
-        // Redirect after successful authentication
-        res.redirect("/dashboard");
-    }
-);
+// app.get(
+//     "/auth/google",
+//     passport.authenticate("google", { scope: ["profile", "email"] })
+// );
+// app.get(
+//     "/auth/google/callback",
+//     passport.authenticate("google", { failureRedirect: "/" }),
+//     (req, res) => {
+//         // Redirect after successful authentication
+//         res.redirect("/dashboard");
+//     }
+// );
 
 app.get('/logout', (req, res) => {
     req.logout();
