@@ -301,7 +301,7 @@ form {
     background: url("../assets/chili-peppers.jpeg") no-repeat center center/cover;
 } */
 
-*/ .home-container {
+ .home-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
