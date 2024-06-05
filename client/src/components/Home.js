@@ -23,7 +23,7 @@ function Home() {
                 {/* <img src={chiliPepper} className='two-red-chili-peppers'/> */}
                 <div>
                     <Auth />
-                    <img src={chilipeppers} />
+                    <img src={chilipeppers} alt="chili peppers"/>
                 </div>
             
         </div>
