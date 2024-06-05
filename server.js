@@ -15,9 +15,39 @@ mongoose.connect(uri)
         console.log('Connected to the DB')
     })
     .catch((error) => {
-        console.errog('Error connecting to the DB', error)
+        console.errog("Error connecting to the DB", error);
+    });
+
+
+
+app.use(
+    session({
+        secret: process.env.SECRET,
+        resave: true,
+        saveUninitialized: true,
     })
-    
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.get(
+    "/auth/google",
+    passport.authenticate("google", { scope: ["profile", "email"] })
+);
+app.get(
+    "/auth/google/callback",
+    passport.authenticate("google", { failureRedirect: "/" }),
+    (req, res) => {
+        // Redirect after successful authentication
+        res.redirect("/dashboard");
+    }
+);
+
+app.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect('/');
+});
 
 //middleware
 // app.use("/sauces", require("./routes/sauceRouter.js"))
