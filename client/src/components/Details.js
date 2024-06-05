@@ -87,10 +87,10 @@ function Details(props){
                 <h3>{!!hotSauceById && hotSauceById.name}</h3>
                 
                     {!!hotSauceById  &&
-                    hotSauceById .imageUrl &&
-                    hotSauceById .imageUrl !== null ? (
+                    hotSauceById.imageUrl &&
+                    hotSauceById.imageUrl !== null ? (
                         <img
-                            src={hotSauceById .imageUrl}
+                            src={hotSauceById.imageUrl}
                             className="details-pic"
                         />
                     ) : (
@@ -98,7 +98,7 @@ function Details(props){
                     )}
                 
                 
-                <h5>Origin: {!!hotSauceById  && hotSauceById .origin}</h5>
+                <h5>Origin: {!!hotSauceById  && hotSauceById.origin}</h5>
                 <h5>
                     Heat Rating (Scoville Units):
                     {!!hotSauceById  && hotSauceById.heatRating}
