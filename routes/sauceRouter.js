@@ -3,7 +3,7 @@ const sauceRouter = express.Router();
 
 const Sauce = require("../models/Sauce.js"); //
 
-//app.use('/api/sauce', require('./routes/sauceRouter.js'))
+///app.use('/api/sauce', require('./routes/sauceRouter.js'))
 
 //GET all sauces, regardless of user
 

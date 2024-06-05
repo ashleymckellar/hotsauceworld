@@ -1,13 +1,14 @@
-const express = require('express')
-const app = express()
-require ('dotenv').config()
-const morgan = require('morgan') 
-const mongoose = require('mongoose') 
-const {expressjwt} = require('express-jwt')
-process.env.SECRET
+const express = require("express");
+const app = express();
+require("dotenv").config();
+const morgan = require("morgan"); 
+const mongoose = require("mongoose");
+const { expressjwt } = require("express-jwt"); 
+process.env.SECRET;
+const PORT = process.env.PORT || 8100;
 
-app.use(express.json());
-app.use(morgan('dev')); 
+app.use(express.json()); 
+app.use(morgan("dev")); 
 
 mongoose.connect(uri)
     .then(() => {
