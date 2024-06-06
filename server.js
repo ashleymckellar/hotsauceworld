@@ -73,5 +73,5 @@ app.use((err, req, res, next) => {
 
 
 app.listen(8100, () => {
-    console.log("The server is running on Port 8100")
+    console.log(`The server is running on Port ${PORT}`)
 })
