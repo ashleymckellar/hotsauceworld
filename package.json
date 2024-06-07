@@ -29,6 +29,6 @@
         "react-bootstrap": "^2.8.0"
     },
     "engine": {
-        "node": "22.x"
+        "node": "22"
     }
 }

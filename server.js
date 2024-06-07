@@ -20,7 +20,16 @@ mongoose.connect(uri)
         console.error("Error connecting to the DB", error);
     });
 
-
+    app.use((req, res, next) => {
+        if (req.header('x-forwarded-proto') !== 'https') {
+          res.redirect(`https://${req.header('host')}${req.url}`);
+        } else {
+          next();
+        }
+      });
+      
+      // Serve static files from the React app
+      app.use(express.static(path.join(__dirname, 'client/build')));
 
 // app.use(
 //     session({
@@ -45,6 +54,10 @@ mongoose.connect(uri)
 //         res.redirect("/dashboard");
 //     }
 // );
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/client/build/index.html'));
+  });
+
 
 app.get('/logout', (req, res) => {
     req.logout();
