@@ -3,6 +3,7 @@ const app = express();
 require("dotenv").config();
 const morgan = require("morgan"); 
 const mongoose = require("mongoose");
+const path = require('path');
 const { expressjwt } = require("express-jwt"); 
 process.env.SECRET;
 const PORT = process.env.PORT || 8100;
@@ -31,13 +32,13 @@ mongoose.connect(uri)
       // Serve static files from the React app
     //   app.use(express.static(path.join(__dirname, 'client/build')));
 
-// app.use(
-//     session({
-//         secret: process.env.SECRET,
-//         resave: true,
-//         saveUninitialized: true,
-//     })
-// );
+app.use(
+    session({
+        secret: process.env.SECRET,
+        resave: true,
+        saveUninitialized: true,
+    })
+);
 
 // app.use(passport.initialize());
 // app.use(passport.session());
@@ -54,9 +55,9 @@ mongoose.connect(uri)
 //         res.redirect("/dashboard");
 //     }
 // );
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname + '/client/build/index.html'));
-//   });
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/client/build/index.html'));
+  });
 
 
 app.get('/logout', (req, res) => {
