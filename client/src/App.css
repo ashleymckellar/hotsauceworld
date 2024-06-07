@@ -181,7 +181,17 @@ form {
     height: 100%;
 }
 
-
+.responsive-image-container {
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .chili-pepper{
+    max-width: 100%;
+    height: auto;
+  }
 
 .cardsize {
     height: 204px;
