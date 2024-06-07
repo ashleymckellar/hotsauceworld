@@ -54,9 +54,9 @@ mongoose.connect(uri)
 //         res.redirect("/dashboard");
 //     }
 // );
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + '/client/build/index.html'));
-  });
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname + '/client/build/index.html'));
+//   });
 
 
 app.get('/logout', (req, res) => {
