@@ -30,15 +30,15 @@ mongoose.connect(uri)
       });
       
       // Serve static files from the React app
-    //   app.use(express.static(path.join(__dirname, 'client/build')));
+      app.use(express.static(path.join(__dirname, 'client/build')));
 
-app.use(
-    session({
-        secret: process.env.SECRET,
-        resave: true,
-        saveUninitialized: true,
-    })
-);
+// app.use(
+//     session({
+//         secret: process.env.SECRET,
+//         resave: true,
+//         saveUninitialized: true,
+//     })
+// );
 
 // app.use(passport.initialize());
 // app.use(passport.session());
