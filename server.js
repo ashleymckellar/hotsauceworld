@@ -13,13 +13,17 @@ const uri = process.env.URI
 app.use(express.json());
 app.use(morgan('dev')); 
 
-mongoose.connect(uri)
-    .then(() => {
-        console.log('Connected to the DB')
-    })
-    .catch((error) => {
-        console.error("Error connecting to the DB", error);
-    });
+
+async function connectToDb() {
+    try {
+        await mongoose.connect(uri);
+        console.log('connected to DB');
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+connectToDb()
 
     app.use((req, res, next) => {
         if (req.header('x-forwarded-proto') !== 'https') {
