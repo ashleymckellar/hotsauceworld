@@ -24,6 +24,7 @@ const [hotSauces, setHotSauces] = useState([]);
 const [userSaucesState, setUserSaucesState] = useState([])
 const [isSubmitted, setIsSubmitted] =useState(false)
 const [hotSauceById, setHotSauceById] = useState({})
+const [theRandomSauce, setTheRandomSauce] = useState({})
 const [loading, setLoading] = useState(true);
 
 function signup(credentials){
@@ -143,6 +144,18 @@ async function getSauceById(_id) {
 }
 
 
+async function getRandomSauce() {
+    try {
+        const response = await userAxios.get(`api/sauce/random`)
+        const randomSauce = response.data
+        setTheRandomSauce(randomSauce)
+
+    } catch (error) {
+        console.error('error getting random sauce', error)
+    }
+}
+
+
 console.log(hotSauces)
 
 function addSauce(newSauce) {
@@ -169,6 +182,8 @@ return (
             setHotSauces,
             getSauce,
             getUserSauces,
+            getRandomSauce,
+            theRandomSauce,
             userSaucesState,
             setUserSaucesState,
             addComment,
