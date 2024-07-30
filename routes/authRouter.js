@@ -39,10 +39,13 @@ authRouter.post('/login', async (req, res, next) => {
         }
         console.log('req.body.username:', req.body.username);
         const isMatch = await user.checkPassword(req.body.password);
+       
         if (!isMatch) {
             res.status(403);
             return next(new Error('Username or password is incorrect.'));
         }
+        console.log(req.body.password)
+        console.log(user.password)
         // console.log('req.body.password:', req.body.password);
         // console.log('stored hashed pw:', user.password);
         // console.log('request body', req.body);
