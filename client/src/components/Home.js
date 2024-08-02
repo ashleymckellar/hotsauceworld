@@ -10,7 +10,7 @@ function Home() {
 
     return (
         <div
-            className="welcome mx-auto row g-3 p-5"
+            className="welcome mx-auto row g-3 py-5 my-5"
             style={{ backgroundImage: { chilipeppers } }}
         >
            
@@ -21,8 +21,9 @@ function Home() {
                     our world of hot sauces
                 </h2>
                 {/* <img src={chiliPepper} className='two-red-chili-peppers'/> */}
-                <div>
+                
                     <Auth />
+                    <div className='py-5'>
                     <img src={chilipeppers} alt="chili peppers"/>
                 </div>
             
