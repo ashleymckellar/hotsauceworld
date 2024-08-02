@@ -20,28 +20,26 @@ export default function AuthForm(props) {
         return regex.test(inputString);
     }
 
-    function handleBlur(e) {
-        setIsFocused((prev) => !prev);
+    function handleBlur() {
+        setIsFocused(false);
     }
 
-    console.log(isMember);
-    console.log(password);
-    console.log(confirmPassword);
     const isPasswordValid = minLengthTest(password);
-    console.log(errMsg);
 
     const doPasswordsMatch = password === confirmPassword;
 
-    console.log(doPasswordsMatch);
-    console.log(isPasswordValid);
-
-    const isDisabled = !(isMember && isPasswordValid && !doPasswordsMatch);
+    const isDisabled = !isMember
+        ? !isPasswordValid || !doPasswordsMatch
+        : !isPasswordValid;
 
     const passwordError =
         !isMember && !isPasswordValid && !isFocused
             ? 'Password must be at least 8 characters.'
             : '';
-    const confirmPasswordError = !isFocused ? 'Passwords do not match.' : '';
+    const confirmPasswordError =
+        !isMember && !doPasswordsMatch && !isFocused
+            ? 'Passwords do not match.'
+            : '';
 
     return (
         <form onSubmit={handleSubmit} className="mx-auto row g-3">
@@ -64,7 +62,7 @@ export default function AuthForm(props) {
                             value={password}
                             name="password"
                             onChange={handleChange}
-                            // onBlur={handleBlur}
+                            onBlur={handleBlur}
                             placeholder="Password"
                         />
                     </div>
@@ -82,7 +80,7 @@ export default function AuthForm(props) {
                         {passwordError && (
                             <p style={{ color: 'red' }}>{passwordError}</p>
                         )}
-                        {!doPasswordsMatch && !isMember && (
+                        {confirmPasswordError && (
                             <p style={{ color: 'red' }}>
                                 {confirmPasswordError}
                             </p>
