@@ -181,7 +181,18 @@ form {
     height: 100%;
 }
 
-
+.responsive-image-container {
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 3vh;
+  }
+  
+  .chili-pepper{
+    max-width: 100%;
+    height: auto;
+  }
 
 .cardsize {
     height: 204px;
@@ -301,7 +312,7 @@ form {
     background: url("../assets/chili-peppers.jpeg") no-repeat center center/cover;
 } */
 
-*/ .home-container {
+ .home-container {
     display: flex;
     flex-direction: column;
     justify-content: center;

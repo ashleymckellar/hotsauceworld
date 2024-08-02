@@ -3,6 +3,7 @@ const app = express();
 require("dotenv").config();
 const morgan = require("morgan"); 
 const mongoose = require("mongoose");
+const path = require('path');
 const { expressjwt } = require("express-jwt"); 
 process.env.SECRET;
 const PORT = process.env.PORT || 8100;
@@ -12,14 +13,28 @@ const uri = process.env.URI
 app.use(express.json());
 app.use(morgan('dev')); 
 
-mongoose.connect(uri)
-    .then(() => {
-        console.log('Connected to the DB')
-    })
-    .catch((error) => {
-        console.error("Error connecting to the DB", error);
-    });
 
+async function connectToDb() {
+    try {
+        await mongoose.connect(uri);
+        console.log('connected to DB');
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+connectToDb()
+
+    app.use((req, res, next) => {
+        if (req.header('x-forwarded-proto') !== 'https') {
+          res.redirect(`https://${req.header('host')}${req.url}`);
+        } else {
+          next();
+        }
+      });
+      
+      // Serve static files from the React app
+      app.use(express.static(path.join(__dirname, 'client/build')));
 
 
 app.get('/logout', (req, res) => {
@@ -48,6 +63,6 @@ app.use((err, req, res, next) => {
 
 
 
-app.listen(8100, () => {
-    console.log("The server is running on Port 8100")
+app.listen(PORT, () => {
+    console.log(`The server is running on Port ${PORT}`)
 })

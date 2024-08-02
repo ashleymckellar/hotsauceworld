@@ -55,6 +55,7 @@ authRouter.post('/login', async (req, res, next) => {
         }
         const token = jwt.sign(user.withoutPassword(), process.env.SECRET);
         return res.status(201).send({ token, user: user.withoutPassword() });
+
     } catch (err) {
         res.status(500);
         return next(err);
