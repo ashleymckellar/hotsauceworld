@@ -36,33 +36,6 @@ connectToDb()
       // Serve static files from the React app
       app.use(express.static(path.join(__dirname, 'client/build')));
 
-// app.use(
-//     session({
-//         secret: process.env.SECRET,
-//         resave: true,
-//         saveUninitialized: true,
-//     })
-// );
-
-// app.use(passport.initialize());
-// app.use(passport.session());
-
-// app.get(
-//     "/auth/google",
-//     passport.authenticate("google", { scope: ["profile", "email"] })
-// );
-// app.get(
-//     "/auth/google/callback",
-//     passport.authenticate("google", { failureRedirect: "/" }),
-//     (req, res) => {
-//         // Redirect after successful authentication
-//         res.redirect("/dashboard");
-//     }
-// );
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname + '/client/build/index.html'));
-//   });
-
 
 app.get('/logout', (req, res) => {
     req.logout();

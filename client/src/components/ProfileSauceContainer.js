@@ -5,7 +5,7 @@ import { UserContext } from '../context/UserProvider.js'
 function ProfileSauceContainer(){
      const { userSaucesState } = useContext(UserContext)
      
-     console.log(userSaucesState)
+    
 
     return (
         <>
