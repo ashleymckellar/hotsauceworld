@@ -27,7 +27,8 @@ function App() {
     return (
         <div>
             <Router>
-                <div className="bg-white">
+                <div className="app-background">
+                    
                     {token && <Header />}
 
                     <Routes>

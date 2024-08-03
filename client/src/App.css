@@ -2,21 +2,14 @@ html {
     height: 100vh;
     margin: 0;
     padding: 0;
-
-    /* Prevent vertical scrollbars when not needed */
-    background: #FFFFFF;
+    background-color: #FED7B2;
+    /* background: ##FFECD9; */
 }
 
 
-/* body {
-  
-  
-  background: linear-gradient(146.11deg, #FFDFBA 20.43%, rgba(255, 255, 255, 0) 79.91%), linear-gradient(202.81deg, #FF6636 38.99%, rgba(255, 255, 255, 0) 85.2%), #FFB45C;
-}  */
-
-/* .navbar-color {
-    background: #D32F2F;
-} */
+.app-background {
+    background-color: #FED7B2;
+}
 
 .pepper {
     height: 200px;
@@ -25,7 +18,7 @@ html {
 
 .submitted-pic {
     height: 200px;
-    /* width:200px; */
+   
 }
 
 .details-pic {
@@ -46,6 +39,26 @@ html {
 
 }
 
+.login-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.login-box {
+    background-color: #E55139;
+    border-radius: 20px;
+    width: 600px;
+    height: 400px;
+    padding-top: 5vh;
+
+}
+
+/* .member-box {
+    background-color: #E55139;
+    border-radius: 20px;
+    width: 600px;
+    height: 200px;
+} */
 
 .submit-btn-div {
     padding-bottom: 10vh;
@@ -55,13 +68,6 @@ li {
     list-style-type: none;
 }
 
-/* .sauce-cards {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    flex-direction: column;
-} */
 
 
 
@@ -106,7 +112,7 @@ li {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px; /* Adjust spacing between buttons if needed */
+    gap: 20px; 
     margin-top: 20px; /* Adjust margin to separate buttons from other content */
     margin-bottom: 20px;
     
@@ -176,7 +182,7 @@ form {
 .welcome {
     text-align: center;
     padding: 10px;
-   
+    color: black;
     position: relative;
     height: 100%;
 }
@@ -331,7 +337,7 @@ form {
 .world {
     text-align: center;
     font-family: "Montserrat";
-    color: #D32F2F;
+    color: #E55139;
     font-size: 50px;
 }
 
@@ -339,15 +345,38 @@ form {
   text-align: center;
   font-family: "Montserrat";
   font-weight: bold;
-  color: #D32F2F;
+  color: ##FFECD9;
   font-size: 30px;
 }
 
+.chili-image {
+    border-radius: 30px;
+}
 
 .sign-in-form {
-  border-radius: 5px;
-  border: 1px solid gray;  
-  height: 30px;
-  padding: 5px;
+  border-radius: 50px;
+  border: none;
+  height: 40px;
+  width: 300px;
+  padding: 15px;
   margin: 10px;
+  background-color: #FED7B2;
+}
+
+.member-button {
+    background-color: #FF9F43;
+    border-radius: 50px;
+    border: none;
+    height: 40px;
+    width: 200px;
+    color: white;
+}
+
+.login-button {
+    background-color: #FF9F43;
+    border-radius: 50px;
+    border: none;
+    height: 40px;
+    width: 200px;
+    color: white;
 }

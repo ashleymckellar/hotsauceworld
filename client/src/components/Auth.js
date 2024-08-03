@@ -15,8 +15,8 @@ export default function Auth() {
     const minLength = 8
     const regex = new RegExp(`^.{${minLength},}$`)
 
-    console.log(inputs.password)
-    console.log(inputs.confirmPassword)
+    // console.log(inputs.password)
+    // console.log(inputs.confirmPassword)
 
     function handleChange(e) {
         const { name, value } = e.target
@@ -58,7 +58,7 @@ export default function Auth() {
 
     return (
         <div className='flex gap-4'>
-            <div className='basis-1/2'>
+            <div className='my-4'>
             <AuthForm
                 handleChange={handleChange}
                 handleSubmit={toggle ? handleLogin : handleSignup}
@@ -70,12 +70,12 @@ export default function Auth() {
                 isMember={toggle}
             />
             </div>
-            <div className='basis-1/2'>
-                <button className="btn btn-danger custom-button mt-4" onClick={toggleForm}>
+            <div className='member-box'>
+                <button className="member-button" onClick={toggleForm}>
                     {toggle ? "Not a member?" : "Already a member?"}
                 </button>
             </div >
-            {validationError && <p style={{ color: "red" }}>{validationError}</p>}
+            {validationError && <p style={{ color: "white" }}>{validationError}</p>}
         </div>
     )
 }

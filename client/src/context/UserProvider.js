@@ -50,6 +50,7 @@ export default function UserProvider(props) {
             .post('/auth/login', credentials)
             .then((res) => {
                 const { user, token } = res.data;
+                console.log(res.data)
                 localStorage.setItem('token', token);
                 localStorage.setItem('user', JSON.stringify(user));
                 getSauce();
