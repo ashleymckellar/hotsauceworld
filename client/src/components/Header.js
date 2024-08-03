@@ -9,23 +9,23 @@ const Header = () => {
 
     return (
         <nav className="navbar">
-            <div className="navbar-container">
-                <div className="navbar-links">
-                    <Link to="/" className="link">
-                        Home
-                    </Link>
-                    <Link to="/profile" className="link">
-                        Profile
-                    </Link>
-                    <Link to="/saucelist" className="link">
-                        Sauce List
-                    </Link>
-                    <Link to="/search" className="link">
-                        Sauce Search
-                    </Link>
-                    <Link to="/random" className="link">
-                        Random Sauce
-                    </Link>
+            <div className="navbar-links">
+                <Link to="/" className="link">
+                    Home
+                </Link>
+                <Link to="/profile" className="link">
+                    Profile
+                </Link>
+                <Link to="/saucelist" className="link">
+                    Sauce List
+                </Link>
+                <Link to="/search" className="link">
+                    Sauce Search
+                </Link>
+                <Link to="/random" className="link">
+                    Random Sauce
+                </Link>
+                <div className="logout-btn-div">
                     {token && (
                         <button className="logout-btn" onClick={logout}>
                             Logout

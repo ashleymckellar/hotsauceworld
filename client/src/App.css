@@ -22,7 +22,8 @@ html {
 }
 
 .details-pic {
-    height: 300px;
+    height: 350px;
+    width: 350px;
 }
 
 .form-flexbox {
@@ -322,40 +323,84 @@ li {
 
 .details-main {
     display: flex;
-    /* flex-direction: column; */
     justify-content: center;
+    align-items: flex-start; /* Align items at the start of the cross axis */
+    background-color: #FED7B2;
+    padding: 20px;
 }
 
 .details-div {
     display: flex;
-    /* flex-direction: column; */
-    justify-content: center; 
-    background-color: white;
-    padding-top: 20px;
-    width: 400px;
-    margin-top: 50px;
+    flex-direction: column;
     align-items: center;
-    gap: 20px;
-    border: none;
+    background-color: white;
+    padding: 10px;
+    width: 40vw;
+    height: auto; /* Adjust height to fit content */
+    margin-top: 50px;
     border-radius: 5px;
+}
+.details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 20px;
+}
+
+.details-text-div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    padding: 20px;
+    
+    width: 300px;
+    height: auto; 
+    
 }
 
 .comment-container {
-   /* display: flex; */
-   border: 1px solid gray;
-   border-radius: 5px;
-   justify-content: center;
-   /* align-items: center; */
-   padding-top: 2vh;
-   margin: 2vh;
-   width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px; 
+    max-height: 400px; 
+    overflow-y: auto; 
+    padding: 20px;
+    margin: 20px;
+    
 }
 
-/* .background-image {
-    position: relative;
-    height: 100%;
-    background: url("../assets/chili-peppers.jpeg") no-repeat center center/cover;
-} */
+.comment-container ul {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
+}
+
+
+
+.comment-bubble {
+   
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 5px;
+    
+    background: #F45D31;
+    color: white;
+   
+    box-sizing: border-box;
+    margin-bottom: 10px; 
+}
+
+.comment-bubble p {
+    margin: 0;            
+    padding: 0;           
+    text-align: center;   
+    font-size: 20px;
+}
+
 
  .home-container {
     display: flex;

@@ -25,22 +25,22 @@ async function connectToDb() {
 
 connectToDb()
 
-    app.use((req, res, next) => {
-        if (req.header('x-forwarded-proto') !== 'https') {
-          res.redirect(`https://${req.header('host')}${req.url}`);
-        } else {
-          next();
-        }
-      });
+    // app.use((req, res, next) => {
+    //     if (req.header('x-forwarded-proto') !== 'https') {
+    //       res.redirect(`https://${req.header('host')}${req.url}`);
+    //     } else {
+    //       next();
+    //     }
+    //   });
       
-      // Serve static files from the React app
-      app.use(express.static(path.join(__dirname, 'client/build')));
+    //   // Serve static files from the React app
+    //   app.use(express.static(path.join(__dirname, 'client/build')));
 
 
-app.get('/logout', (req, res) => {
-    req.logout();
-    res.redirect('/');
-});
+// app.get('/logout', (req, res) => {
+//     req.logout();
+//     res.redirect('/');
+// });
 
 //middleware
 

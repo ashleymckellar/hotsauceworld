@@ -8,25 +8,23 @@
 /* Navbar styles */
 .navbar {
     display: flex;
-    width: 100%;
-    background-color: #D32F2F; 
-    padding: 1rem;
-   
-    justify-content: center;
-    align-items: center;
-}
-
-.navbar-container {
-    gap: 200px;
+    
+    background-color: #E55139;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     justify-content: space-between;
-    align-items: space-between;
     
 }
+
+
 
 .navbar-links {
     display: flex;
     justify-content: space-between;
     width: 100%;
+   
     
 }
 
@@ -41,12 +39,20 @@
     text-decoration: underline;
 }
 
+.logout-btn-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .logout-btn {
-    background-color: #FBC02D;
+    background-color: #FF9F43;
+    border-radius: 50px;
     border: none;
-    border-radius: 5px;
-    font-size: 25px;
+    height: 40px;
+    width: 150px;
     color: white;
+
     
 }
 
