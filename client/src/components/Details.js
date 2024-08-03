@@ -82,19 +82,20 @@ function Details(props){
 
     // console.log(foundSauce);
     return (
+        <div className="details-main">
         <div className="details-div">
-            <div className="bg-white py-3 text-center">
+            <div className=" py-3 text-center ">
                 <h3>{!!hotSauceById && hotSauceById.name}</h3>
                 
                     {!!hotSauceById  &&
                     hotSauceById.imageUrl &&
                     hotSauceById.imageUrl !== null ? (
                         <img
-                            src={hotSauceById.imageUrl}
+                            src={hotSauceById.imageUrl} alt=""
                             className="details-pic"
                         />
                     ) : (
-                        <img src={pepper} className="pepper" />
+                        <img src={pepper} alt='' className="pepper" />
                     )}
                 
                 
@@ -124,6 +125,7 @@ function Details(props){
                     </ul>
                 </div>
             </div>
+        </div>
         </div>
     );
 };

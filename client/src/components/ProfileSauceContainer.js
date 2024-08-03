@@ -1,5 +1,6 @@
 import { React, useEffect, useContext } from "react";
 import ProfileSauceList from "./ProfileSauceList";
+import { Container, Row } from "react-bootstrap";
 import { UserContext } from '../context/UserProvider.js'
 
 function ProfileSauceContainer(){
@@ -8,14 +9,17 @@ function ProfileSauceContainer(){
     
 
     return (
-        <>
+        <Container>
+            <Row>
            
             {userSaucesState.map(sauce => (
             
                 <ProfileSauceList {...sauce} key={sauce._id} />
                 
             ))}
-        </>
+            </Row>
+            </Container>
+    
     );
 };
 
