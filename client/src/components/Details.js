@@ -80,6 +80,7 @@ function Details(props) {
         getSauceById(sauceId);
     }, [sauceId]);
 
+    console.log(hotSauceById)
     // console.log(foundSauce);
     return (
         <div className="details-main">
@@ -98,14 +99,14 @@ function Details(props) {
             <div className="comment-container">
                 
                 <ul>
-                    {hotSauceById && Array.isArray(hotSauceById.comments) ? (
+                    {hotSauceById && Array.isArray(hotSauceById.comments) && hotSauceById.comments.length > 0 ? (
                         hotSauceById.comments.map((comment) => (
                             <li className="comment-bubble" key={comment._id}>
                                 <p>{comment.comment}</p>
                             </li>
                         ))
                     ) : (
-                        <li>No comments available.</li>
+                        <li>No comments posted yet.</li>
                     )}
                 </ul>
             </div>

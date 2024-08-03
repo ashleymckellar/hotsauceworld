@@ -72,12 +72,12 @@ function SauceList(props) {
                             <p>Ingredients: {ingredients}</p>
                             {imageUrl ? (
                                 <img
-                                    src={imageUrl}
+                                    src={imageUrl} alt=''
                                     className="submitted-pic card-img-top cardsize"
                                 />
                             ) : (
                                 <img
-                                    src={pepper}
+                                    src={pepper} alt=''
                                     className="pepper submitted-pic card-img-top cardsize"
                                 />
                             )}
@@ -111,7 +111,7 @@ function SauceList(props) {
                                         
                                         <ul>
                                             {comments &&
-                                            Array.isArray(comments) ? (
+                                            Array.isArray(comments) && comments.length !== 0 ? (
                                                 
                                                 comments.map((comment) => (
                                                     <li key={comment._id} className="comment-bubble">
@@ -120,7 +120,7 @@ function SauceList(props) {
                                                     </li>
                                                 ))
                                             ) : (
-                                                <li>No comments found.</li>
+                                                <li>Be the first to post a comment.</li>
                                             )}
                                         </ul>
                                         
