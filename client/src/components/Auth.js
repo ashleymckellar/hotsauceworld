@@ -75,7 +75,10 @@ export default function Auth() {
                     {toggle ? "Not a member?" : "Already a member?"}
                 </button>
             </div >
-            {validationError && <p style={{ color: "white" }}>{validationError}</p>}
+            <div className='validation-section'>
+            {validationError && <p style={{ color: "red" }}>{validationError}</p>}
+            {errMsg && <p style={{color: 'red'}}>{errMsg}</p>}
+        </div>
         </div>
     )
 }

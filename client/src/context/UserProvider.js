@@ -81,6 +81,7 @@ export default function UserProvider(props) {
             ...prevState,
             errMsg,
         }));
+        console.log(errMsg)
     }
 
     function resetAuthError() {
@@ -193,7 +194,8 @@ export default function UserProvider(props) {
                 getSauceById,
                 hotSauceById,
                 setHotSauceById,
-                loading,
+                loading
+                
             }}
         >
             {props.children}

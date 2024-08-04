@@ -85,7 +85,7 @@ function SauceList(props) {
                             <div className="button-container">
                                 <button
                                     type="submit"
-                                    className="sauce-details-btn"
+                                    className="login-button"
                                     onClick={handleDetailsClick}
                                 >
                                     Details
@@ -93,7 +93,7 @@ function SauceList(props) {
 
                                 <button
                                     type="submit"
-                                    className="show-comments-btn"
+                                    className="login-button"
                                     onClick={handleCommentClick}
                                 >
                                     {showComments
@@ -132,7 +132,7 @@ function SauceList(props) {
 
                             <button
                                 type="submit"
-                                className="add-comments-btn"
+                                className="login-button"
                                 onClick={handleClick}
                             >
                                 Add Comment

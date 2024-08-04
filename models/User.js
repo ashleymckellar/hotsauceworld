@@ -1,9 +1,16 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 const bcrypt = require("bcrypt")
+const validator = require('validator');
 
 const userSchema = new Schema({
     username: {
+        type: String,
+        required: true,
+        lowercase: true,
+        unique: true,
+    },
+    email: {
         type: String,
         required: true,
         lowercase: true,
@@ -31,6 +38,19 @@ const userSchema = new Schema({
 //         user.password = hash
 //     })
 // })
+userSchema.pre('validate', function (next) {
+    const user = this;
+    const password = user.password;
+    const email = user.email;
+    console.log(user);
+    if (!validator.isStrongPassword(password)) {
+        return next(new Error('Password must contain upper and lowercase letter, number, and special character.'));
+    }
+    if (!validator.isEmail(email)) {
+        return next(new Error("Please provide a valid email address."));
+    }
+    next();
+});
 
 userSchema.pre("save", function (next) {
     const user = this;
@@ -53,3 +73,4 @@ userSchema.methods.withoutPassword = function ()  {
 }
 
 module.exports = mongoose.model("User", userSchema)
+

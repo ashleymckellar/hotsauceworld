@@ -9,7 +9,7 @@ export default function AuthForm(props) {
         isSubmitted,
 
         isMember,
-        inputs: { username, password, confirmPassword },
+        inputs: { username, email, password, confirmPassword },
     } = props;
 
     const minLength = 8;
@@ -55,6 +55,17 @@ export default function AuthForm(props) {
                                     name="username"
                                     onChange={handleChange}
                                     placeholder="Username"
+                                />
+                            </div>
+                            <div className="col-12 flex">
+                                <input
+                                    className="sign-in-form"
+                                    type="email"
+                                    value={email}
+                                    name="email"
+                                    onChange={handleChange}
+                                    placeholder="Email Address"
+                                    required
                                 />
                             </div>
                             <div className="col-12 flex">
