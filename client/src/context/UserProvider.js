@@ -50,7 +50,7 @@ export default function UserProvider(props) {
             .post('/auth/login', credentials)
             .then((res) => {
                 const { user, token } = res.data;
-                console.log(res.data)
+                // console.log(res.data)
                 localStorage.setItem('token', token);
                 localStorage.setItem('user', JSON.stringify(user));
                 getSauce();
@@ -154,6 +154,7 @@ export default function UserProvider(props) {
             const response = await userAxios.get(`api/sauce/random`);
             const randomSauce = response.data;
             setTheRandomSauce(randomSauce);
+            console.log(randomSauce)
         } catch (error) {
             console.error('error getting random sauce', error);
         }

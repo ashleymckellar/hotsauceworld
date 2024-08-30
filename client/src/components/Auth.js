@@ -1,85 +1,84 @@
-import React, { useState, useContext } from 'react'
-import { UserContext } from '../context/UserProvider'
-import AuthForm from './AuthForm.js'
+import React, { useState, useContext } from 'react';
+import { UserContext } from '../context/UserProvider';
+import AuthForm from './AuthForm.js';
 
-const initInputs = { username: "", password: "", confirmPassword: ""}
+const initInputs = { username: '', password: '', confirmPassword: '' };
 
 export default function Auth() {
-    const [inputs, setInputs] = useState(initInputs)
-    const [toggle, setToggle] = useState(false)
-    const { signup, login, errMsg, resetAuthError } = useContext(UserContext)
-    const [validationError, setValidationError] = useState("")
-    const [isSubmitted, setIsSubmitted] = useState(false)
-    
+    const [inputs, setInputs] = useState(initInputs);
+    const [toggle, setToggle] = useState(false);
+    const { signup, login, errMsg, resetAuthError } = useContext(UserContext);
+    const [validationError, setValidationError] = useState('');
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
-    const minLength = 8
-    const regex = new RegExp(`^.{${minLength},}$`)
+    const minLength = 8;
+    const regex = new RegExp(`^.{${minLength},}$`);
 
     // console.log(inputs.password)
     // console.log(inputs.confirmPassword)
 
     function handleChange(e) {
-        const { name, value } = e.target
-        
+        const { name, value } = e.target;
+
         // if (name === "password" && !regex.test(value)) {
         //     setValidationError("Password must be at least 8 characters.")
-        
+
         // } else {
         //     setValidationError("")
         // }
 
-        setInputs(prevInputs => ({
+        setInputs((prevInputs) => ({
             ...prevInputs,
-            [name]: value
-        }))
+            [name]: value,
+        }));
     }
 
-   
-
     function handleSignup(e) {
-        e.preventDefault()
+        e.preventDefault();
         if (!regex.test(inputs.password)) {
-            setValidationError("Password must be at least 8 characters.")
-            return
+            setValidationError('Password must be at least 8 characters.');
+            return;
         }
-        signup(inputs)
-        setIsSubmitted(true)
+        signup(inputs);
+        setIsSubmitted(true);
     }
 
     function handleLogin(e) {
-        e.preventDefault()
-        login(inputs)
+        e.preventDefault();
+        login(inputs);
     }
 
     function toggleForm() {
-        setToggle(prev => !prev)
-        resetAuthError()
+        setToggle((prev) => !prev);
+        resetAuthError();
     }
 
     return (
-        <div className='flex gap-4'>
-            <div className='my-4'>
-            <AuthForm
-                handleChange={handleChange}
-                handleSubmit={toggle ? handleLogin : handleSignup}
-                inputs={inputs}
-                btnText={toggle ? "Log in" : "Sign up"}
-                errMsg={errMsg}
-                
-                isSubmitted={isSubmitted}
-                isMember={toggle}
-            />
+        <div>
+            <div>
+                <AuthForm
+                    handleChange={handleChange}
+                    handleSubmit={toggle ? handleLogin : handleSignup}
+                    inputs={inputs}
+                    btnText={toggle ? 'Log in' : 'Sign up'}
+                    errMsg={errMsg}
+                    isSubmitted={isSubmitted}
+                    isMember={toggle}
+                />
             </div>
-            <div className='member-box'>
-                <button className="member-button" onClick={toggleForm}>
-                    {toggle ? "Not a member?" : "Already a member?"}
-                </button>
-            </div >
-            <div className='validation-section'>
-            {validationError && <p style={{ color: "red" }}>{validationError}</p>}
-            {errMsg && <p style={{color: 'red'}}>{errMsg}</p>}
+            <div className="member-flex">
+                <div className="member-box">
+                    <button className="member-button" onClick={toggleForm}>
+                        {toggle ? 'Not a member?' : 'Already a member?'}
+                    </button>
+                </div>
+            </div>
+            <div className="validation-section">
+                {validationError && (
+                    <p style={{ color: 'red' }}>{validationError}</p>
+                )}
+                {errMsg && <p style={{ color: 'red' }}>{errMsg}</p>}
+            </div>
         </div>
-        </div>
-    )
+    );
 }
-

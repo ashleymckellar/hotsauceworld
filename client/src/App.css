@@ -11,19 +11,20 @@ html {
     background-color: #FED7B2;
 }
 
-.pepper {
+/* .pepper {
     height: 200px;
     width: 200px;
-}
+} */
 
-.submitted-pic {
+/* .submitted-pic {
     height: 200px;
-   
-}
+  
+} */
 
 .details-pic {
-    height: 350px;
-    width: 350px;
+    height: 550px;
+    width: 550px;
+    border-radius: 20px;
 }
 
 .form-flexbox {
@@ -41,7 +42,7 @@ html {
     width: 50vw;
     height: auto;
     background-color: #E55139;
-    border-radius: 5px;
+    border-radius: 20px;
     max-width: 600px; 
     padding-top: 90px; 
     display: flex;
@@ -58,7 +59,29 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    border-radius: 20px;
+    
 
+}
+
+.search-form {
+    padding: 3vh;
+    margin: 3vh;
+    text-align: center;
+    background-color: white;
+    border-radius: 20px;
+    background-color: #E55139;
+    
+}
+
+.search-form-text {
+    color: white;
+}
+
+
+.details-title {
+    color: white;
+    font-size: 48px;
 }
 
 .login-flex {
@@ -68,11 +91,42 @@ html {
 
 .login-box {
     background-color: #E55139;
-    border-radius: 20px;
+    
     width: 600px;
     height: 400px;
     padding-top: 5vh;
+    padding-bottom: 1vh;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    
 
+}
+
+.member-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.member-box {
+    
+    background-color: #E55139;
+    width: 600px;
+    height: 100px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    
+    
+}
+
+.member-button {
+    background-color: #FF9F43;
+    border-radius: 50px;
+    border: none;
+    height: 40px;
+    width: 200px;
+    color: white;
+    margin-top: 4vh;
 }
 
 .validation-section {
@@ -103,6 +157,7 @@ li {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 5vh;
    
     
     
@@ -124,10 +179,27 @@ li {
     margin-right: 1vh;
     max-width: 400px;
     min-width: 300px;
-    border: 1px solid gray;
-    border-radius: 5px;
+    border: 1px solid #E55139;
+    border-radius: 20px;
     padding: 2vh;
     background-color: #E55139;
+    
+}
+
+
+.sauce-card .card-title {
+    color: white;
+    font-size: 36px;
+}
+
+.sauce-card-text {
+    color: white;
+}
+
+.card-button-flex {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3vh;
 }
 
 
@@ -137,9 +209,11 @@ li {
 }
 
 
-.card-img-top {
-    max-width: 100%;
-    height: auto;
+.img-div-card{
+    width: 250px;
+    height: 304px;
+    border-radius: 20px;
+   
 }
 
 
@@ -152,50 +226,71 @@ li {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px; 
-    margin-top: 20px; 
-    margin-bottom: 20px;
+    margin-top: 3vh;
+    gap: 10px;
+    
+   
     
 }
 
-.sauce-details-btn {
+/* .sauce-details-btn {
     background-color: #D32F2F;
     border-radius: 5px;
     font-size: 20px;
     border: none;
     color: white;
     width: 100px;
-}
+} */
 
-.show-comments-btn {
+/* .show-comments-btn {
     background-color: #D32F2F;
     border-radius: 5px;
     font-size: 20px;
     border: none;
     color: white;
     width: 200px;
-}
+} */
 
-.add-comments-btn {
+/* .add-comments-btn {
     background-color: #D32F2F;
     border-radius: 5px;
     font-size: 20px;
     border: none;
     color: white;
     width: 200px;
+} */
+
+.comment-form-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+    margin-bottom: 5vh;
+    
+  
+   
 }
 
-
+.comment-form {
+   
+        border-radius: 50px;
+        border: none;
+        height: 40px;
+        width: 250px;
+        margin-bottom: 3vh;
+        padding: 2vh;
+        background-color: #FED7B2;
+    
+}
 
 .comment-submit {
-    margin-top: 10px;
-    align-self: center; 
-    background-color: #D32F2F;
-    border-radius: 5px;
-    font-size: 20px;
+    background-color: #FF9F43;
+    border-radius: 50px;
     border: none;
-    color: white;
+    height: 40px;
     width: 200px;
+    color: white;
 
 }
 
@@ -235,22 +330,48 @@ li {
     height: auto;
   }
 
-.cardsize {
+/* .cardsize {
     height: 204px;
-}
+} */
 
 .comments-div {
    
     width: 500px;
 
     
+
+    
+}
+
+.comments-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FED7B2;
+    border-radius: 20px;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+    padding-y: 5vh;
+    padding-left: 0;
+    padding-right: 30px;
+    width: auto;
+    
+}
+
+.ul-flex {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2vh;
+   
+    
 }
 
 
-.custom-card {
+/* .custom-card {
     border: 1px solid gray;
     border-radius: 5px;
-}
+} */
 
 .card-comments-parent {
     display: flex;
@@ -259,17 +380,17 @@ li {
     margin-top: 3vh;
 }
 
-.card-comments-div {
+/* .card-comments-div {
     border: 1px solid gray;
     border-radius: 5px;
     padding: .5vh;
     margin-bottom: 2vh;
     padding-right: 3vh;
     background-color: ;
-}
+} */
 
-.comment-bubble {
-    display: flex;
+/* .comment-bubble {
+   
     border: 1px solid white;
     border-radius: 5px;
     margin: 2vh;
@@ -277,7 +398,7 @@ li {
     justify-content: center;
     background: #F45D31;
     color: white;
-}
+} */
 
 
 
@@ -331,21 +452,48 @@ li {
 .details-main {
     display: flex;
     justify-content: center;
-    align-items: flex-start; 
+    align-items: center; 
     background-color: #FED7B2;
     padding: 20px;
+}
+
+.random-comments-parent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5vh;
+}
+
+.random-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    background-color: #FED7B2;
+    padding: 5vh;
+}
+
+.random-text-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5vh;
+    background-color: #FED7B2;
 }
 
 .details-div {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    background-color: #FFECD9;
-    padding: 10px;
+    background-color: #E55139;
+    padding: 5vh;
     width: 40vw;
     height: auto; 
     margin-top: 50px;
-    border-radius: 5px;
+    border-radius: 20px;
     
 }
 .details-container {
@@ -353,11 +501,8 @@ li {
     flex-direction: column;
     align-items: center; 
     gap: 20px;
-    
-    border-radius: 5px;
     padding: 30px;
     margin: 30px;
-    background-color: #E55139;
 }
 
 .details-text-div {
@@ -365,10 +510,62 @@ li {
     flex-direction: column;
     align-items: start; 
     padding: 20px;
-    
-    width: 300px;
+    border-radius: 20px;
+    border: none;
+    background-color: #FED7B2;
+    width: 560px;
     height: auto; 
     
+}
+
+.details-text {
+    color: #E55139;
+}
+
+.no-comments-text {
+    color: #E55139;
+    font-size: 18px;
+}
+
+.random-parent-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #E55139;
+    padding: 5vh;
+    width: 40vw;
+    gap: 20px;
+    height: auto; 
+    margin-top: 50px;
+    border-radius: 20px;
+    
+}
+
+.random-text-div {
+    display: flex;
+    flex-direction: column;
+    align-items: start; 
+    padding: 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: #FED7B2;
+    width: 560px;
+    height: auto; 
+    
+}
+
+.random-comment-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px; 
+    max-height: 400px; 
+    overflow-y: auto; 
+    padding: 20px;
+    margin-top: 2vh;
+    border-radius: 20px;
+    background-color: #FED7B2;
 }
 
 .comment-container {
@@ -378,10 +575,9 @@ li {
     width: 300px; 
     max-height: 400px; 
     overflow-y: auto; 
-    padding: 20px;
-    margin: 20px;
+   
     
-    border-radius: 5px;
+    border-radius: 20px;
     background-color: #FED7B2;
     
 }
@@ -397,16 +593,15 @@ li {
 .comment-bubble {
    
     display: flex;
-    
     justify-content: center;
     align-items: center;
     border: none;
     border-radius: 5px;
-    
     background: #F45D31;
     color: white;
-   
-    box-sizing: border-box;
+    padding: 1vh;
+    width: 200px;
+    margin-top: 10px;
     margin-bottom: 10px; 
 }
 
@@ -449,9 +644,9 @@ li {
   font-size: 30px;
 }
 
-.chili-image {
-    border-radius: 30px;
-}
+/* .chili-image {
+    border-radius: 20px;
+} */
 
 .sign-in-form {
   border-radius: 50px;
@@ -463,14 +658,7 @@ li {
   background-color: #FED7B2;
 }
 
-.member-button {
-    background-color: #FF9F43;
-    border-radius: 50px;
-    border: none;
-    height: 40px;
-    width: 200px;
-    color: white;
-}
+
 
 .login-button {
     background-color: #FF9F43;
@@ -495,6 +683,11 @@ li {
 
 .username {
     color: #E55139;
+}
+
+.range-slider {
+    
+    width: 300px;
 }
 
 .profile-sauce-container {

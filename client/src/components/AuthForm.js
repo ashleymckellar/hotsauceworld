@@ -47,7 +47,7 @@ export default function AuthForm(props) {
                 <form onSubmit={handleSubmit} className="mx-auto row g-3">
                     {!isMember ? (
                         <>
-                            <div className="col-12 flex">
+                            <div>
                                 <input
                                     className="sign-in-form"
                                     type="text"

@@ -32,21 +32,21 @@ import SauceList from "./SauceList";
    }
 
    const isDisabled = !inputData.heat || isNaN(Number(inputData.heat));
-   console.log(inputData)
-   console.log(hotSauces)
-   console.log(filteredSauces)
+//    console.log(inputData)
+//    console.log(hotSauces)
+//    console.log(filteredSauces)
 
 return (
     <div className="container">
         <div className="search-container">
-            <div className="bg-white py-3 text-center">
-                <h3>
+            <div className="search-form">
+                <h3 className="search-form-text">
                     Just how hot do you want to go? Find your perfect sauce
                     below!{" "}
                 </h3>
                 <br></br>
-                <p>How many Scoville Heat Units can you handle?</p>
-                <label>0 - 5000000</label>
+                <p className="search-form-text">How many Scoville Heat Units can you handle?</p>
+                <label className="username">0 - 5000000</label>
                 <br></br>
                 <form onSubmit={handleSubmit}>
                     <input
@@ -54,15 +54,15 @@ return (
                         max={5000000}
                         type="range"
                         name="heat"
-                        style={{ width: "300px" }}
+                        className="range-slider"
                         value={inputData.heatRating}
                         onChange={handleInputChange}
                     />
                     {inputData.heatRating}
-                    <p>{inputData.heat}</p>
+                    <p className="search-form-text">{inputData.heat}</p>
                     <button
                         type="submit"
-                        class="btn btn-danger"
+                        className="login-button"
                         disabled={isDisabled}
                         onClick={handleSubmit}
                     >
