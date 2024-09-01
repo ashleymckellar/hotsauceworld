@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from '../context/UserProvider.js';
-import '../Header.css'; // Make sure to create this CSS file
+import '../Header.css'; 
 
 const Header = () => {
     const navigate = useNavigate();

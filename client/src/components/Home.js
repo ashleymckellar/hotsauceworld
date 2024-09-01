@@ -21,7 +21,7 @@ function Home() {
                 
                     <Auth />
                     <div className='py-5'>
-                    <img src={chilipeppers} alt="chili peppers" className='chili-img'/>
+                    <img src={chilipeppers} alt="chili peppers" className='chili-img img-fluid'/>
 
                 </div>
             </div>

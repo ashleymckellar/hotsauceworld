@@ -10,8 +10,8 @@
     display: flex;
     
     background-color: #E55139;
-    padding-left: 10rem;
-    padding-right: 10rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     padding-top: 2rem;
     padding-bottom: 2rem;
     justify-content: space-between;
@@ -50,7 +50,7 @@
     border-radius: 50px;
     border: none;
     height: 40px;
-    width: 150px;
+    width: 250px;
     color: white;
 
     
@@ -75,5 +75,17 @@
         text-align: center;
         padding: 1rem;
         width: 100%;
+    }
+
+    .logout-btn {
+        background-color: #FF9F43;
+        border-radius: 50px;
+        border: none;
+        height: 40px;
+        width: 300px;
+        color: white;
+        padding-bottom: 5vh;
+    
+        
     }
 }

@@ -19,12 +19,24 @@ export default function RandomSauce(props) {
     console.log(theRandomSauce);
 
     return (
-        <div className="random-main">
-            <button className="login-button" onClick={() => getRandomSauce()}>
-                Get Random Sauce!
-            </button>
-            <div className="random-parent-div">
-              
+        <div className="d-flex justify-content-center align-items-center">
+            <div
+                className="d-flex flex-column justify-content-center align-items-center mt-5"
+                style={{
+                    width: '100%',
+                    maxWidth: '600px',
+                    borderRadius: '20px',
+                    backgroundColor: '#E55139',
+                    padding: '5vh',
+                }}
+            >
+                <button
+                    className="login-button"
+                    onClick={() => getRandomSauce()}
+                >
+                    Get Random Sauce!
+                </button>
+                <div className="d-flex flex-column justify-content-center align-items-center gap-3 p-5 m-3">
                     <h1 className="search-form-text">{theRandomSauce.name}</h1>
 
                     {theRandomSauce.imageUrl &&
@@ -41,10 +53,19 @@ export default function RandomSauce(props) {
                             className="details-pic"
                         />
                     )}
-                    <div className="random-div">.
-                        
+                    <div
+                        className="d-flex flex-column align-items-center p-2 m-5"
+                        style={{
+                            borderRadius: '20px',
+                            width: '100%',
+                           
+                            maxWidth: '500px',
+                            border: 'none',
+                            backgroundColor: '#FED7B2',
+                        }}
+                    >
+                        .
                         <div className="random-text-div">
-                         
                             <h5 className="details-text">
                                 Origin: {theRandomSauce.origin}
                             </h5>
@@ -59,12 +80,11 @@ export default function RandomSauce(props) {
                             <h5 className="details-text">
                                 Ingredients: {theRandomSauce.ingredients}
                             </h5>
-                        
                         </div>
-                        <div className='random-comments-parent'>
-                        <h3 className='details-title'>User Comments</h3>
+                    </div>
+                    <div className="random-comments-parent">
+                        <h3 className="details-title">User Comments</h3>
                         <div className="random-comment-section">
-                            
                             <ul>
                                 {theRandomSauce &&
                                 Array.isArray(theRandomSauce.comments) &&
@@ -82,9 +102,8 @@ export default function RandomSauce(props) {
                                 )}
                             </ul>
                         </div>
-                        </div>
                     </div>
-                
+                </div>
             </div>
         </div>
     );

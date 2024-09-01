@@ -46,7 +46,7 @@ function Form(props) {
             description: '',
             ingredients: '',
             imageUrl: '',
-            comments: '',
+            comments: null,
         });
     };
     const handleCloseModal = () => {
@@ -65,7 +65,7 @@ function Form(props) {
             description: '',
             ingredients: '',
             imageUrl: '',
-            comments: '',
+            comments: null,
         });
         setValidationError('');
         getUserSauces();
@@ -100,8 +100,8 @@ function Form(props) {
     };
 
     return (
-        <div className="form-flexbox">
-            <div className="form-inner-div">
+        <div className="d-flex justify-content-center">
+            <div className="form-inner-div flex-grow-1">
                 <form onSubmit={handleSubmit} className="form">
                     <div class="col-md-4">
                         <input

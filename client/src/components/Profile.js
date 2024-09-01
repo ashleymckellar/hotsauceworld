@@ -27,9 +27,9 @@ export default function Profile(props){
                 <div className='py-20'>
                     <h2 className='profile-sauce-container py-20'>Your Submitted Sauces</h2>
                 </div>
-                <section className="my-20">
+                <section >
                     <div>
-                        <div className="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-4 ">
+                        <div>
                         
                     {!userSauceState ? (
                     <ProfileSauceContainer sauces={userSauceState} />

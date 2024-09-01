@@ -104,7 +104,7 @@ function SauceList(props) {
                             {comments &&
                             Array.isArray(comments) &&
                             comments.length !== 0 ? (
-                                <div className="comments-flex">
+                                <div className="random-comment-section">
                                     <ul className="ul-flex">
                                         {comments.map((comment) => (
                                             <li
