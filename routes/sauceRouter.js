@@ -84,13 +84,14 @@ sauceRouter.post('/', async (req, res, next) => {
 //DELETE one
 sauceRouter.delete('/:sauceId', async (req, res, next) => {
     try {
-        const deletedSauce = Sauce.findOneAndDelete({
+        console.log(req.params.sauceId)
+        const deletedSauce = await Sauce.findOneAndDelete({
             _id: req.params.sauceId,
         });
         if (!deletedSauce) {
             return res.status(404).send('Sauce not found');
         }
-        return res.status(200).send('successfully deleted sauce');
+        return res.status(200).send(`successfully deleted ${deletedSauce.name}`);
     } catch (error) {
         res.status(500);
         return next(error);

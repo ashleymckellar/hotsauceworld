@@ -104,7 +104,7 @@ function SauceList(props) {
                             {comments &&
                             Array.isArray(comments) &&
                             comments.length !== 0 ? (
-                                <div className="random-comment-section">
+                                <div className="card-comment-section">
                                     <ul className="ul-flex">
                                         {comments.map((comment) => (
                                             <li
@@ -120,7 +120,7 @@ function SauceList(props) {
                                 </div>
                             ) : (
                                 <ul className="ul-flex">
-                                    <li>Be the first to post a comment.</li>
+                                    <li className='sauce-card-text'>Be the first to post a comment.</li>
                                 </ul>
                             )}
                         </div>
