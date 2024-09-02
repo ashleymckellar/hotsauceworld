@@ -42,7 +42,6 @@ userSchema.pre('validate', function (next) {
     const user = this;
     const password = user.password;
     const email = user.email;
-    console.log(user);
     if (!validator.isStrongPassword(password)) {
         return next(new Error('Password must contain upper and lowercase letter, number, and special character.'));
     }

@@ -1,4 +1,4 @@
-import { React, useEffect, useContext } from "react";
+import { React, useContext } from "react";
 import ProfileSauceList from "./ProfileSauceList";
 import { Container, Row } from "react-bootstrap";
 import { UserContext } from '../context/UserProvider.js'

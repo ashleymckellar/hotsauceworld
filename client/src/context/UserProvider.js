@@ -50,7 +50,7 @@ export default function UserProvider(props) {
             .post('/auth/login', credentials)
             .then((res) => {
                 const { user, token } = res.data;
-                // console.log(res.data)
+            
                 localStorage.setItem('token', token);
                 localStorage.setItem('user', JSON.stringify(user));
                 getSauce();
@@ -142,7 +142,6 @@ export default function UserProvider(props) {
         try {
             const response = await userAxios.get(`api/item/${_id}`);
             const itemData = response.data;
-            console.log('item data', itemData);
             setHotSauceById(itemData);
         } catch (error) {
             console.error('error fetching item', error);
@@ -154,7 +153,7 @@ export default function UserProvider(props) {
             const response = await userAxios.get(`api/sauce/random`);
             const randomSauce = response.data;
             setTheRandomSauce(randomSauce);
-            console.log(randomSauce)
+            
         } catch (error) {
             console.error('error getting random sauce', error);
         }
@@ -163,7 +162,7 @@ export default function UserProvider(props) {
    
 
     function addSauce(newSauce) {
-        console.log(newSauce);
+    
         userAxios
             .post('/api/sauce', newSauce)
             .then((response) => {

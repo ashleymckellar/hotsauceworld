@@ -14,18 +14,8 @@ export default function Auth() {
     const minLength = 8;
     const regex = new RegExp(`^.{${minLength},}$`);
 
-    // console.log(inputs.password)
-    // console.log(inputs.confirmPassword)
-
     function handleChange(e) {
         const { name, value } = e.target;
-
-        // if (name === "password" && !regex.test(value)) {
-        //     setValidationError("Password must be at least 8 characters.")
-
-        // } else {
-        //     setValidationError("")
-        // }
 
         setInputs((prevInputs) => ({
             ...prevInputs,

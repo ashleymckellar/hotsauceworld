@@ -16,7 +16,7 @@ export default function RandomSauce(props) {
         comments,
         _id,
     } = props;
-    console.log(theRandomSauce);
+  
 
     return (
         <div className="d-flex justify-content-center align-items-center">
@@ -58,7 +58,7 @@ export default function RandomSauce(props) {
                         style={{
                             borderRadius: '20px',
                             width: '100%',
-                           
+                            height: '400px',
                             maxWidth: '500px',
                             border: 'none',
                             backgroundColor: '#FED7B2',
@@ -98,7 +98,7 @@ export default function RandomSauce(props) {
                                         </li>
                                     ))
                                 ) : (
-                                    <li>No comments posted yet.</li>
+                                    <li className='no-comments-text'>No comments posted yet.</li>
                                 )}
                             </ul>
                         </div>

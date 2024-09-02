@@ -32,14 +32,12 @@ import SauceList from "./SauceList";
    }
 
    const isDisabled = !inputData.heat || isNaN(Number(inputData.heat));
-//    console.log(inputData)
-//    console.log(hotSauces)
-//    console.log(filteredSauces)
+
 
 return (
-    <div className="container">
+    <div className="container px-3">
         <div className="search-container">
-            <div className="search-form">
+            <div className="search-form px-3">
                 <h3 className="search-form-text">
                     Just how hot do you want to go? Find your perfect sauce
                     below!{" "}
@@ -76,7 +74,7 @@ return (
             )}
 
             {isSubmitted && filteredSauces && filteredSauces.length > 0 && (
-                <div className="row">
+                <div className="row px-3">
                     {filteredSauces.map((sauce) => (
                         <div className="col mb-4" key={sauce._id}>
                             <SauceList {...sauce} />

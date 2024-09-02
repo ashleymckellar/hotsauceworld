@@ -17,7 +17,7 @@ function ProfileSauceList(props) {
     const handleDetailsClick = (sauceId) => navigate(`details/${_id}`);
 
     return (
-        <div className="col-sm-12 col-md-6 col-lg-6 mb-4">
+        <div className="col-sm-12 col-md-6 col-lg-4 mb-4">
             <div className="sauce-card">
                 <h2 className="card-title">{name}</h2>
                 <h4 className="sauce-card-text">Origin: {origin}</h4>

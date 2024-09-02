@@ -6,7 +6,7 @@
 }
 
 /* Navbar styles */
-.navbar {
+/* .navbar {
     display: flex;
     
     background-color: #E55139;
@@ -16,7 +16,81 @@
     padding-bottom: 2rem;
     justify-content: space-between;
     
+} */
+
+/* .navbar {
+    margin-bottom: 20px;
+    display: flex;
+    
+    background-color: #E55139;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    justify-content: space-between;
+} */
+
+.navbar {
+    background-color: #E55139;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    width: 100%;
+    justify-content: space-between;
+    
 }
+
+/* @media (min-width: 992px) {
+    .navbar {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+} */
+
+@media (min-width: 769px) { 
+    /* .navbar {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        
+    } */
+
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    font-size: 1.1rem;
+}
+
+.logout-btn-div {
+    margin-left: auto;
+}
+
+.logout-btn {
+    background-color: #E55139;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+}
+
+.nav-links {
+    color: white;
+}
+
+.nav-flex {
+    display: flex;
+    flex-direction: column;
+}
+
 
 
 
@@ -50,7 +124,7 @@
     border-radius: 50px;
     border: none;
     height: 40px;
-    width: 250px;
+    width: 120px;
     color: white;
 
     
@@ -59,22 +133,61 @@
 .logout-btn:hover {
     text-decoration: underline;
 }
+}
 
-/* Responsive behavior */
+
 @media (max-width: 768px) {
-    .navbar-container {
+    .navbar {
         flex-direction: column;
+        align-items: center;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
     }
-    
-    .navbar-links {
+
+
+    .navbar-toggler {
+        align-self: flex-end;
+        border: none;
+        outline: none;
+    }
+
+    .custom-toggler .navbar-toggler-icon {
+        background-image: none;
+    }
+
+    .custom-toggler .navbar-toggler-icon::before {
+        content: "\00d7"; 
+        font-size: 2.5rem;
+        color: white;
+    }
+
+    .custom-toggler.collapsed .navbar-toggler-icon::before {
+        content:  "\2630"; 
+        font-size: 2.5rem;
+        color: white;
+    }
+
+    .navbar-collapse {
+        display: flex;
         flex-direction: column;
+        align-items: center;
         width: 100%;
+        margin-top: 1rem;
     }
-    
-    .link, .logout-btn {
-        text-align: center;
+
+    .nav-link {
         padding: 1rem;
+        text-align: center;
         width: 100%;
+        color: white;
+        font-size: 1.5rem;
+    }
+
+    .logout-btn-div {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 1rem;
     }
 
     .logout-btn {
@@ -82,10 +195,10 @@
         border-radius: 50px;
         border: none;
         height: 40px;
-        width: 300px;
+        width: 250px;
         color: white;
-        padding-bottom: 5vh;
-    
-        
+        padding: 0.5rem;
+        text-align: center;
     }
 }
+

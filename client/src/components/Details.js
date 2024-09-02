@@ -14,61 +14,55 @@ userAxios.interceptors.request.use((config) => {
 
 function Details(props) {
     const { sauceId } = useParams();
-    const { addComment, hotSauces } = useContext(UserContext);
-    const [foundSauce, setFoundSauce] = useState({});
-    const [formData, setFormData] = useState({
-        comment: '',
-    });
+    // const { addComment, hotSauces } = useContext(UserContext);
+    // const [foundSauce, setFoundSauce] = useState({});
+    // const [formData, setFormData] = useState({
+    //     comment: '',
+    // });
 
-    const [showForm, setShowForm] = useState(false);
+    // const [showForm, setShowForm] = useState(false);
     const [hotSauceById, setHotSauceById] = useState({});
 
-    console.log(sauceId);
-    console.log(hotSauceById);
+  
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (!formData.comment) {
-            console.log('Comment text is required.');
-            return;
-        }
-        const newComment = {
-            comment: formData.comment,
-            sauce: sauceId,
-        };
-        console.log('sauceId', newComment);
-        // console.log(hotSaucesId)
-        // console.log(foundSauce)
-        addComment(sauceId, newComment);
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     if (!formData.comment) {
+    //         console.log('Comment text is required.');
+    //         return;
+    //     }
+    //     const newComment = {
+    //         comment: formData.comment,
+    //         sauce: sauceId,
+    //     };
+    //     console.log('sauceId', newComment);
+        
+    //     addComment(sauceId, newComment);
 
-        console.log('comment submitted!');
-        setFormData({ comment: '' });
-    };
+    //     console.log('comment submitted!');
+    //     setFormData({ comment: '' });
+    // };
 
-    // console.log(hotSauces)
-    // console.log(foundSauce)
+ 
 
-    const handleClick = () => {
-        setShowForm(true);
-    };
+    // const handleClick = () => {
+    //     setShowForm(true);
+    // };
 
-    const handleChange = (e) => {
-        setFormData((prevFormData) => ({
-            ...prevFormData,
-            [e.target.name]: e.target.value,
-        }));
-    };
+    // const handleChange = (e) => {
+    //     setFormData((prevFormData) => ({
+    //         ...prevFormData,
+    //         [e.target.name]: e.target.value,
+    //     }));
+    // };
 
-    // useEffect(() => {
-    //     const sauce = hotSauces.find((salsa) => salsa._id === sauceId);
-    //     setFoundSauce(sauce);
-    // }, [hotSauces, setFoundSauce]);
+  
 
     async function getSauceById(sauceId) {
         try {
             const response = await userAxios.get(`/api/item/${sauceId}`);
             const itemData = response.data;
-            console.log('item data', itemData);
+            
             setHotSauceById(itemData);
         } catch (error) {
             console.error('error fetching item', error);
@@ -79,8 +73,8 @@ function Details(props) {
         getSauceById(sauceId);
     }, [sauceId]);
 
-    console.log(hotSauceById);
-    // console.log(foundSauce);
+  
+    
     return (
         <div className="d-flex justify-content-center align-items-center">
             <div

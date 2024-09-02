@@ -28,7 +28,7 @@ function Form(props) {
     const handleChange = (e) => {
         const { name, value } = e.target;
         const regex = /^[0-9]+$/;
-        console.log(name, value);
+
         if (name === 'heatRating' && !regex.test(value)) {
             setValidationError('Please enter a valid heat rating number.');
             setRequiredFieldError('');
@@ -57,7 +57,6 @@ function Form(props) {
         e.preventDefault();
         getUserSauces();
         setIsSubmitted(true);
-        console.log('submitted sauce');
         setInputs({
             name: '',
             heatRating: '',
@@ -79,7 +78,7 @@ function Form(props) {
 
     const onRequiredBlur = (e) => {
         const { name, value } = e.target;
-        console.log(name, value);
+
         if (!isSubmitted) {
             if (value === '') {
                 setRequiredFieldError(
@@ -93,7 +92,6 @@ function Form(props) {
 
     const onBlur = (e) => {
         const { name, value } = e.target;
-        console.log(name, value);
         if (regex.test(value)) {
             setValidationError('');
         }
@@ -168,10 +166,14 @@ function Form(props) {
                     </div>
 
                     {validationError && (
-                        <p style={{ color: 'white', padding: '10px' }}>{validationError}</p>
+                        <p style={{ color: 'white', padding: '10px' }}>
+                            {validationError}
+                        </p>
                     )}
                     {isError && (
-                        <p style={{ color: 'white', padding: "10px" }}>{requiredFieldError}</p>
+                        <p style={{ color: 'white', padding: '10px' }}>
+                            {requiredFieldError}
+                        </p>
                     )}
                     <div className="submit-btn-div">
                         <button

@@ -13,7 +13,6 @@ sauceRouter.get('/', (request, response, next) => {
     Sauce.find()
         .exec()
         .then((sauces) => {
-            console.log(response.data);
             return response.status(200).send(sauces);
         })
         .catch((error) => {
@@ -61,7 +60,6 @@ sauceRouter.get('/user', (req, res, next) => {
             res.status(500);
             next(err);
         });
-
 });
 
 // POST(add one); remember this goes throught the sauces.js and server.js(middleware) so have the correct name in postman --- http://localhost:8100/sauces/
@@ -84,14 +82,15 @@ sauceRouter.post('/', async (req, res, next) => {
 //DELETE one
 sauceRouter.delete('/:sauceId', async (req, res, next) => {
     try {
-        console.log(req.params.sauceId)
         const deletedSauce = await Sauce.findOneAndDelete({
             _id: req.params.sauceId,
         });
         if (!deletedSauce) {
             return res.status(404).send('Sauce not found');
         }
-        return res.status(200).send(`successfully deleted ${deletedSauce.name}`);
+        return res
+            .status(200)
+            .send(`successfully deleted ${deletedSauce.name}`);
     } catch (error) {
         res.status(500);
         return next(error);
@@ -99,20 +98,22 @@ sauceRouter.delete('/:sauceId', async (req, res, next) => {
 });
 
 //UPDATE one
-sauceRouter.put('/:sauceId', async (req, res, next)=> {
+sauceRouter.put('/:sauceId', async (req, res, next) => {
     try {
-    const updatedSauce = await Sauce.findOneAndUpdate({ _id: req.params.sauceId }, req.body, {
-        new: true,
-        runValidators: true,
+        const updatedSauce = await Sauce.findOneAndUpdate(
+            { _id: req.params.sauceId },
+            req.body,
+            {
+                new: true,
+                runValidators: true,
+            },
+        );
+
+        return res.status(200).json(updatedSauce);
+    } catch (err) {
+        res.status(500);
+        return next(err);
     }
-)
-       
-            return res.status(200).json(updatedSauce);
-        }
-        catch(err)  {
-            res.status(500);
-            return next(err);
-        };
 });
 
 module.exports = sauceRouter;

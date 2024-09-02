@@ -14,7 +14,6 @@ authRouter.post('/signup', async (req, res, next) => {
             return next(new Error('That username is already taken.'));
         }
         const newUser = new User(req.body);
-        console.log(req.body);
 
         const savedUser = await newUser.save();
         const token = jwt.sign(savedUser.withoutPassword(), process.env.SECRET);
@@ -37,25 +36,20 @@ authRouter.post('/login', async (req, res, next) => {
             res.status(403);
             return next(new Error('Username or password is incorrect.'));
         }
-        console.log('req.body.username:', req.body.username);
+
         const isMatch = await user.checkPassword(req.body.password);
-       
+
         if (!isMatch) {
             res.status(403);
             return next(new Error('Username or password is incorrect.'));
         }
-        console.log(req.body.password)
-        console.log(user.password)
-        // console.log('req.body.password:', req.body.password);
-        // console.log('stored hashed pw:', user.password);
-        // console.log('request body', req.body);
+
         if (!isMatch) {
             res.status(403);
             return next(new Error('Username or password is incorrect.'));
         }
         const token = jwt.sign(user.withoutPassword(), process.env.SECRET);
         return res.status(201).send({ token, user: user.withoutPassword() });
-
     } catch (err) {
         res.status(500);
         return next(err);

@@ -1,10 +1,3 @@
-///I'M NOT REALLY USING THIS COMPONENT OR THE GETSAUCECOMMENTS FUNCTION - IT'S ALL BEING HANDLED BY
-//USERCONTEXT, WHICH I KNOW ISN'T BEST PRACTICE.  ASK ABOUT HOW TO SPLIT OUT THE DIFFERENT FUNCTIONS ACROSS CONTEXTS
-
-
-
-
-
 import React, { useState } from 'react'
 import axios from 'axios'
 export const SauceContext = React.createContext()
@@ -23,15 +16,15 @@ export default function SauceProvider(props){
     const hotSaucesId = hotSauces.map((sauce) => sauce._id)
 
 
-async function getSauceComments(hotSaucesId){
-    try {
-        const response = await sauceAxios.get(`/api/comment/${hotSaucesId}`)
-        return response.data
-    } catch (error) {
-        console.log(error)
-        throw error
-    }
-}
+// async function getSauceComments(hotSaucesId){
+//     try {
+//         const response = await sauceAxios.get(`/api/comment/${hotSaucesId}`)
+//         return response.data
+//     } catch (error) {
+//         console.log(error)
+//         throw error
+//     }
+// }
 
    
 

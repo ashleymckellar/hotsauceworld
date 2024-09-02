@@ -35,7 +35,7 @@ function SauceList(props) {
     };
 
     const handleCommentClick = (e) => {
-        console.log('comments shown!');
+        
         setShowComments(!showComments);
     };
 
@@ -49,21 +49,21 @@ function SauceList(props) {
             comment: formData.comment,
             sauce: hotSaucesId,
         };
-        console.log('hotSaucesId', newComment);
+       
         addComment(hotSaucesId, newComment);
 
-        console.log('comment submitted!');
+       
         setFormData({ comment: '' });
         setShowForm(!showForm);
     };
 
     const handleDetailsClick = (sauceId) => navigate(`details/${_id}`);
 
-    // console.log(hotSauces)
+
 
     return (
         <div>
-            <div className="row gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-3 py-3">
+            <div className="row gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-5 py-3">
                 <div className="sauce-card">
                     <h4 className="sauce-card-text">{name}</h4>
 
