@@ -34,11 +34,7 @@ connectToDb()
       });
       
      
-      app.use(express.static(path.join(__dirname, 'client/build')));
-
-      app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
-      });
+   
 
 
 app.get('/logout', (req, res) => {
@@ -54,7 +50,11 @@ app.use('/api/sauce', require('./routes/sauceRouter.js'))
 app.use('/api/comment', require('./routes/commentRouter.js'))
 app.use('/api/item', require('./routes/itemRouter.js'))
 
+app.use(express.static(path.join(__dirname, 'client/build')));
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+});
 
 //Error handler/s
 app.use((err, req, res, next) => { 
