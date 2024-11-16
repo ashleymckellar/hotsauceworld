@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f98ed4bc.css",
+    "main.js": "/static/js/main.6cbd1a80.js",
+    "static/media/chilipepper.jpg": "/static/media/chilipepper.884737e0ec48819db31c.jpg",
+    "static/media/Montserrat-Light.ttf": "/static/media/Montserrat-Light.7179b7d2ac9b599db5f9.ttf",
+    "static/media/chili-peppers.jpeg": "/static/media/chili-peppers.d5fd23bd4ff810e7290c.jpeg",
+    "static/media/two-red-chili-peppers.jpg": "/static/media/two-red-chili-peppers.7e685af437251a71aaec.jpg",
+    "index.html": "/index.html",
+    "main.f98ed4bc.css.map": "/static/css/main.f98ed4bc.css.map",
+    "main.6cbd1a80.js.map": "/static/js/main.6cbd1a80.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f98ed4bc.css",
+    "static/js/main.6cbd1a80.js"
+  ]
+}
